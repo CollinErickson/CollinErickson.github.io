@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.20.7" />
+
+
+<title>Getting started with TensorFlow in R - A Hugo website</title>
+<meta property="og:title" content="Getting started with TensorFlow in R - A Hugo website">
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="../../../../css/fonts.css" media="all">
+<link rel="stylesheet" href="../../../../css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="../../../../" class="nav-logo">
+    <img src="../../../../images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="../../../../about/">About</a></li>
+    
+    <li><a href="https://github.com/CollinErickson">GitHub</a></li>
+    
+    <li><a href="https://twitter.com/collin_e">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">10 min read</span>
+    
+
+    <h1 class="article-title">Getting started with TensorFlow in R</h1>
+
+    
+    <span class="article-date">2017/08/01</span>
+    
+
+    <div class="article-content">
+      <p>I have installed TensorFlow on my Windows laptop, and it appears to work using Python. I’m a heavy R user, so I’d like to be able to run TensorFlow through R (and RStudio).</p>
+<p>First I installed the <code>tensorflow</code> library</p>
+<pre><code>install.packages(&#39;tensorflow&#39;)
+library(tensorflow)</code></pre>
+<p>This warned me that my version of R wasn’t up to date. I updated R to 3.4.1 and RStudio to 1.0.153 to make sure that everything is the current version.</p>
+<p>Now to get TensorFlow working I will follow the instructions on <a href="https://tensorflow.rstudio.com/" class="uri">https://tensorflow.rstudio.com/</a>.</p>
+<pre class="r"><code>library(tensorflow)
+sess = tf$Session()
+hello &lt;- tf$constant(&#39;Hello, TensorFlow!&#39;)
+sess$run(hello)</code></pre>
+<pre><code>## b&#39;Hello, TensorFlow!&#39;</code></pre>
+<p>Looks like it works fine, very simple so far.</p>
+<div id="running-an-example" class="section level3">
+<h3>Running an example</h3>
+<p>I’m going to try to get the MNIST example to work found at <a href="https://tensorflow.rstudio.com/tutorial_mnist_pros.html" class="uri">https://tensorflow.rstudio.com/tutorial_mnist_pros.html</a>. First we load the data.</p>
+<pre class="r"><code>library(tensorflow)
+input_dataset &lt;- tf$examples$tutorials$mnist$input_data
+mnist &lt;- input_dataset$read_data_sets(&quot;MNIST-data&quot;, one_hot = TRUE)</code></pre>
+<p>Looks like the data loads fine.</p>
+<p>Now we start a session. I don’t know why they have the <code>library</code> command again, but I’ll play along.</p>
+<pre class="r"><code>library(tensorflow)
+sess &lt;- tf$InteractiveSession()</code></pre>
+<p>Next we create the placeholders for the data.</p>
+<pre class="r"><code>x &lt;- tf$placeholder(tf$float32, shape(NULL, 784L))
+y_ &lt;- tf$placeholder(tf$float32, shape(NULL, 10L))</code></pre>
+<p>And next the variables.</p>
+<pre class="r"><code>W &lt;- tf$Variable(tf$zeros(shape(784L, 10L)))
+b &lt;- tf$Variable(tf$zeros(shape(10L)))</code></pre>
+<p>We initialize these variables.</p>
+<pre class="r"><code>sess$run(tf$global_variables_initializer())</code></pre>
+<p>Now we create a simple regression model. A single layer with a softmax.</p>
+<pre class="r"><code>y &lt;- tf$nn$softmax(tf$matmul(x,W) + b)</code></pre>
+<p>And use cross-entropy for the loss function.</p>
+<pre class="r"><code>cross_entropy &lt;- tf$reduce_mean(-tf$reduce_sum(y_ * tf$log(y), reduction_indices=1L))</code></pre>
+<p>We specify how to train the model.</p>
+<pre class="r"><code>optimizer &lt;- tf$train$GradientDescentOptimizer(0.5)
+train_step &lt;- optimizer$minimize(cross_entropy)</code></pre>
+<p>Now we can train the model with the following for loop.</p>
+<pre class="r"><code>for (i in 1:1000) {
+  batches &lt;- mnist$train$next_batch(100L)
+  batch_xs &lt;- batches[[1]]
+  batch_ys &lt;- batches[[2]]
+  sess$run(train_step,
+           feed_dict = dict(x = batch_xs, y_ = batch_ys))
+}</code></pre>
+<p>Now we can see how the model does by checking its predictions.</p>
+<pre class="r"><code>correct_prediction &lt;- tf$equal(tf$argmax(y, 1L), tf$argmax(y_, 1L))</code></pre>
+<p>We check the accuracy with the following.</p>
+<pre class="r"><code>accuracy &lt;- tf$reduce_mean(tf$cast(correct_prediction, tf$float32))
+accuracy$eval(feed_dict=dict(x = mnist$test$images, y_ = mnist$test$labels))</code></pre>
+<pre><code>## [1] 0.9191</code></pre>
+<p>That simple model was able to classify over 91% of the digits correctly, a hair less than the example online, but still very good for such a simple model.</p>
+</div>
+<div id="multilayer-convnet" class="section level2">
+<h2>Multilayer ConvNet</h2>
+<p>Now we try to more advanced model to improve the results. Convolution neural networks are very popular for image recognition. Seeing as object recognition networks can get very high accuracies, we should be able to get near perfect on such a simple task as digit recognition.</p>
+<p>Initialize functions to create weight and bias variables</p>
+<pre class="r"><code>weight_variable &lt;- function(shape) {
+  initial &lt;- tf$truncated_normal(shape, stddev=0.1)
+  tf$Variable(initial)
+}
+
+bias_variable &lt;- function(shape) {
+  initial &lt;- tf$constant(0.1, shape=shape)
+  tf$Variable(initial)
+}</code></pre>
+<p>Set up the convolutions and pooling.</p>
+<pre class="r"><code>conv2d &lt;- function(x, W) {
+  tf$nn$conv2d(x, W, strides=c(1L, 1L, 1L, 1L), padding=&#39;SAME&#39;)
+}
+
+max_pool_2x2 &lt;- function(x) {
+  tf$nn$max_pool(
+    x, 
+    ksize=c(1L, 2L, 2L, 1L),
+    strides=c(1L, 2L, 2L, 1L), 
+    padding=&#39;SAME&#39;)
+}</code></pre>
+<p>Now we create the variables for the first layer.</p>
+<pre class="r"><code>W_conv1 &lt;- weight_variable(shape(5L, 5L, 1L, 32L))
+b_conv1 &lt;- bias_variable(shape(32L))</code></pre>
+<p>x must be reshaped from a vector of length 784 to a 28 by 28 square in order for the convolutions to work.</p>
+<pre class="r"><code>x_image &lt;- tf$reshape(x, shape(-1L, 28L, 28L, 1L))</code></pre>
+<p>Next we apply the relu and pooling after multiplying x by the weight and adding the bias.</p>
+<pre class="r"><code>h_conv1 &lt;- tf$nn$relu(conv2d(x_image, W_conv1) + b_conv1)
+h_pool1 &lt;- max_pool_2x2(h_conv1)</code></pre>
+<p>Now we add a second conv layer.</p>
+<pre class="r"><code>W_conv2 &lt;- weight_variable(shape = shape(5L, 5L, 32L, 64L))
+b_conv2 &lt;- bias_variable(shape = shape(64L))
+
+h_conv2 &lt;- tf$nn$relu(conv2d(h_pool1, W_conv2) + b_conv2)
+h_pool2 &lt;- max_pool_2x2(h_conv2)</code></pre>
+<p>And a fully connected layer.</p>
+<pre class="r"><code>W_fc1 &lt;- weight_variable(shape(7L * 7L * 64L, 1024L))
+b_fc1 &lt;- bias_variable(shape(1024L))
+
+h_pool2_flat &lt;- tf$reshape(h_pool2, shape(-1L, 7L * 7L * 64L))
+h_fc1 &lt;- tf$nn$relu(tf$matmul(h_pool2_flat, W_fc1) + b_fc1)</code></pre>
+<p>We use dropout to help regularize.</p>
+<pre class="r"><code>keep_prob &lt;- tf$placeholder(tf$float32)
+h_fc1_drop &lt;- tf$nn$dropout(h_fc1, keep_prob)</code></pre>
+<p>And finally a softmax layer as output.</p>
+<pre class="r"><code>W_fc2 &lt;- weight_variable(shape(1024L, 10L))
+b_fc2 &lt;- bias_variable(shape(10L))
+
+y_conv &lt;- tf$nn$softmax(tf$matmul(h_fc1_drop, W_fc2) + b_fc2)</code></pre>
+<p>Now we can run the training and optimization.</p>
+<pre class="r"><code>cross_entropy &lt;- tf$reduce_mean(-tf$reduce_sum(y_ * tf$log(y_conv), reduction_indices=1L))
+train_step &lt;- tf$train$AdamOptimizer(1e-4)$minimize(cross_entropy)
+correct_prediction &lt;- tf$equal(tf$argmax(y_conv, 1L), tf$argmax(y_, 1L))
+accuracy &lt;- tf$reduce_mean(tf$cast(correct_prediction, tf$float32))
+sess$run(tf$global_variables_initializer())
+
+for (i in 1:20000) {
+  batch &lt;- mnist$train$next_batch(50L)
+  if (i %% 100 == 0) {
+    train_accuracy &lt;- accuracy$eval(feed_dict = dict(
+        x = batch[[1]], y_ = batch[[2]], keep_prob = 1.0))
+    cat(sprintf(&quot;step %d, training accuracy %g\n&quot;, i, train_accuracy))
+  }
+  train_step$run(feed_dict = dict(
+    x = batch[[1]], y_ = batch[[2]], keep_prob = 0.5))
+}</code></pre>
+<pre><code>## step 100, training accuracy 0.84
+## step 200, training accuracy 0.84
+## step 300, training accuracy 0.92
+## step 400, training accuracy 0.9
+## step 500, training accuracy 1
+## step 600, training accuracy 0.96
+## step 700, training accuracy 0.9
+## step 800, training accuracy 0.92
+## step 900, training accuracy 0.94
+## step 1000, training accuracy 0.96
+## step 1100, training accuracy 0.96
+## step 1200, training accuracy 0.96
+## step 1300, training accuracy 1
+## step 1400, training accuracy 0.98
+## step 1500, training accuracy 1
+## step 1600, training accuracy 0.96
+## step 1700, training accuracy 0.98
+## step 1800, training accuracy 0.98
+## step 1900, training accuracy 1
+## step 2000, training accuracy 1
+## step 2100, training accuracy 0.98
+## step 2200, training accuracy 0.96
+## step 2300, training accuracy 1
+## step 2400, training accuracy 0.98
+## step 2500, training accuracy 1
+## step 2600, training accuracy 1
+## step 2700, training accuracy 1
+## step 2800, training accuracy 1
+## step 2900, training accuracy 0.98
+## step 3000, training accuracy 0.98
+## step 3100, training accuracy 0.96
+## step 3200, training accuracy 1
+## step 3300, training accuracy 1
+## step 3400, training accuracy 1
+## step 3500, training accuracy 0.98
+## step 3600, training accuracy 0.98
+## step 3700, training accuracy 0.98
+## step 3800, training accuracy 1
+## step 3900, training accuracy 1
+## step 4000, training accuracy 1
+## step 4100, training accuracy 1
+## step 4200, training accuracy 1
+## step 4300, training accuracy 0.98
+## step 4400, training accuracy 1
+## step 4500, training accuracy 1
+## step 4600, training accuracy 0.98
+## step 4700, training accuracy 0.98
+## step 4800, training accuracy 1
+## step 4900, training accuracy 0.98
+## step 5000, training accuracy 1
+## step 5100, training accuracy 0.98
+## step 5200, training accuracy 1
+## step 5300, training accuracy 0.98
+## step 5400, training accuracy 0.98
+## step 5500, training accuracy 1
+## step 5600, training accuracy 1
+## step 5700, training accuracy 1
+## step 5800, training accuracy 1
+## step 5900, training accuracy 0.96
+## step 6000, training accuracy 0.98
+## step 6100, training accuracy 1
+## step 6200, training accuracy 0.98
+## step 6300, training accuracy 1
+## step 6400, training accuracy 1
+## step 6500, training accuracy 0.96
+## step 6600, training accuracy 1
+## step 6700, training accuracy 0.98
+## step 6800, training accuracy 1
+## step 6900, training accuracy 0.98
+## step 7000, training accuracy 1
+## step 7100, training accuracy 1
+## step 7200, training accuracy 1
+## step 7300, training accuracy 0.98
+## step 7400, training accuracy 1
+## step 7500, training accuracy 1
+## step 7600, training accuracy 0.98
+## step 7700, training accuracy 1
+## step 7800, training accuracy 1
+## step 7900, training accuracy 0.98
+## step 8000, training accuracy 1
+## step 8100, training accuracy 1
+## step 8200, training accuracy 1
+## step 8300, training accuracy 1
+## step 8400, training accuracy 0.98
+## step 8500, training accuracy 0.98
+## step 8600, training accuracy 0.98
+## step 8700, training accuracy 1
+## step 8800, training accuracy 1
+## step 8900, training accuracy 0.96
+## step 9000, training accuracy 1
+## step 9100, training accuracy 1
+## step 9200, training accuracy 0.98
+## step 9300, training accuracy 0.98
+## step 9400, training accuracy 1
+## step 9500, training accuracy 1
+## step 9600, training accuracy 1
+## step 9700, training accuracy 1
+## step 9800, training accuracy 1
+## step 9900, training accuracy 1
+## step 10000, training accuracy 1
+## step 10100, training accuracy 0.98
+## step 10200, training accuracy 1
+## step 10300, training accuracy 1
+## step 10400, training accuracy 0.96
+## step 10500, training accuracy 1
+## step 10600, training accuracy 0.98
+## step 10700, training accuracy 1
+## step 10800, training accuracy 1
+## step 10900, training accuracy 1
+## step 11000, training accuracy 1
+## step 11100, training accuracy 1
+## step 11200, training accuracy 1
+## step 11300, training accuracy 1
+## step 11400, training accuracy 1
+## step 11500, training accuracy 1
+## step 11600, training accuracy 1
+## step 11700, training accuracy 1
+## step 11800, training accuracy 1
+## step 11900, training accuracy 1
+## step 12000, training accuracy 1
+## step 12100, training accuracy 1
+## step 12200, training accuracy 1
+## step 12300, training accuracy 1
+## step 12400, training accuracy 0.96
+## step 12500, training accuracy 1
+## step 12600, training accuracy 1
+## step 12700, training accuracy 1
+## step 12800, training accuracy 1
+## step 12900, training accuracy 1
+## step 13000, training accuracy 1
+## step 13100, training accuracy 1
+## step 13200, training accuracy 1
+## step 13300, training accuracy 1
+## step 13400, training accuracy 1
+## step 13500, training accuracy 1
+## step 13600, training accuracy 1
+## step 13700, training accuracy 0.98
+## step 13800, training accuracy 1
+## step 13900, training accuracy 1
+## step 14000, training accuracy 1
+## step 14100, training accuracy 1
+## step 14200, training accuracy 1
+## step 14300, training accuracy 1
+## step 14400, training accuracy 1
+## step 14500, training accuracy 1
+## step 14600, training accuracy 1
+## step 14700, training accuracy 0.98
+## step 14800, training accuracy 1
+## step 14900, training accuracy 0.98
+## step 15000, training accuracy 1
+## step 15100, training accuracy 1
+## step 15200, training accuracy 1
+## step 15300, training accuracy 1
+## step 15400, training accuracy 1
+## step 15500, training accuracy 1
+## step 15600, training accuracy 1
+## step 15700, training accuracy 1
+## step 15800, training accuracy 1
+## step 15900, training accuracy 1
+## step 16000, training accuracy 1
+## step 16100, training accuracy 1
+## step 16200, training accuracy 1
+## step 16300, training accuracy 0.98
+## step 16400, training accuracy 0.98
+## step 16500, training accuracy 0.98
+## step 16600, training accuracy 1
+## step 16700, training accuracy 1
+## step 16800, training accuracy 1
+## step 16900, training accuracy 1
+## step 17000, training accuracy 1
+## step 17100, training accuracy 1
+## step 17200, training accuracy 1
+## step 17300, training accuracy 1
+## step 17400, training accuracy 1
+## step 17500, training accuracy 1
+## step 17600, training accuracy 1
+## step 17700, training accuracy 1
+## step 17800, training accuracy 1
+## step 17900, training accuracy 1
+## step 18000, training accuracy 1
+## step 18100, training accuracy 1
+## step 18200, training accuracy 1
+## step 18300, training accuracy 0.98
+## step 18400, training accuracy 0.98
+## step 18500, training accuracy 1
+## step 18600, training accuracy 1
+## step 18700, training accuracy 1
+## step 18800, training accuracy 1
+## step 18900, training accuracy 1
+## step 19000, training accuracy 1
+## step 19100, training accuracy 1
+## step 19200, training accuracy 1
+## step 19300, training accuracy 1
+## step 19400, training accuracy 1
+## step 19500, training accuracy 1
+## step 19600, training accuracy 1
+## step 19700, training accuracy 1
+## step 19800, training accuracy 1
+## step 19900, training accuracy 1
+## step 20000, training accuracy 1</code></pre>
+<pre class="r"><code>test_accuracy &lt;- accuracy$eval(feed_dict = dict(
+     x = mnist$test$images, y_ = mnist$test$labels, keep_prob = 1.0))
+cat(sprintf(&quot;test accuracy %g&quot;, test_accuracy))</code></pre>
+<pre><code>## test accuracy 0.9931</code></pre>
+<p>The default of 20000 steps was far too many. It had near perfect training predictions after 1500 and it took about an hour to train the full thing. When I changed it to 2000 iterations it had test accuracy of 97.7%.</p>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="../../../../index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="../../../../images/hugo-logo.png" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="../../../../js/math-code.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  }
+});
+</script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
+

@@ -6,10 +6,42 @@
     <description>Recent content in Posts on A Hugo website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 May 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 Aug 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Creating a gray box neural network in TensorFlow</title>
+      <link>/2017/08/01/creating-a-gray-box-neural-network-in-tensorflow/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/08/01/creating-a-gray-box-neural-network-in-tensorflow/</guid>
+      <description>Generally neural networks act as black boxes. The input goes in, you get output, and there is interpretation of the data that helps you understand the model.
+A gray box means that we impose structure on the internal structure of the neural network, so that after the model is fit we can look at the estimated parameters and they will tell us something useful.
+One way we can do this is to encode an equation that we want to use near the end of the neural network.</description>
+    </item>
+    
+    <item>
+      <title>Getting started with TensorFlow in R</title>
+      <link>/2017/08/01/getting-started-with-tensorflow-in-r/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/08/01/getting-started-with-tensorflow-in-r/</guid>
+      <description>I have installed TensorFlow on my Windows laptop, and it appears to work using Python. I’m a heavy R user, so I’d like to be able to run TensorFlow through R (and RStudio).
+First I installed the tensorflow library
+install.packages(&amp;#39;tensorflow&amp;#39;)library(tensorflow)This warned me that my version of R wasn’t up to date. I updated R to 3.4.1 and RStudio to 1.0.153 to make sure that everything is the current version.</description>
+    </item>
+    
+    <item>
+      <title>Getting started with TensorFlow on Windows</title>
+      <link>/2017/08/01/getting-started-with-tensorflow-on-windows/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/08/01/getting-started-with-tensorflow-on-windows/</guid>
+      <description>I have wanted to try using TensorFlow for a while since it is very popular, and I think it might be able to solve a problem I’m working on this summer. I have a Windows 7 laptop, so I’ll be detailing the installation process for TensorFlow on a Windows computer.
+This is mostly for my own reference purposes, you will learn nothing by reading this. I’m just following the details provided by TensorFlow here https://www.</description>
+    </item>
     
     <item>
       <title>Setting up a GitHub blog for R users</title>
@@ -19,54 +51,6 @@
       <guid>/2017/05/26/setting-up-a-github-blog-for-r-users/</guid>
       <description>A while back I tried to set up a GitHub blog following instructions using Jekyll and Ruby, which seems to be the recommended method by GitHub. I had lots of trouble following tutorials and getting it to work, and eventually abandoned it.
 Recently I tried again, after finding out that I can do it through RStudio, using the R package blogdown. I followed the instructions provided by Robert Myles, and it seems to be working fine so far.</description>
-    </item>
-    
-    <item>
-      <title>Test 1</title>
-      <link>/2017/05/09/test-1/</link>
-      <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/2017/05/09/test-1/</guid>
-      <description>This is the text. Is it working?</description>
-    </item>
-    
-    <item>
-      <title>A Plain Markdown Post</title>
-      <link>/2016/12/30/a-plain-markdown-post/</link>
-      <pubDate>Fri, 30 Dec 2016 21:49:57 -0700</pubDate>
-      
-      <guid>/2016/12/30/a-plain-markdown-post/</guid>
-      <description>This is a post written in plain Markdown (*.md) instead of R Markdown (*.Rmd). The major differences are:
- You cannot run any R code in a plain Markdown document, whereas in an R Markdown document, you can embed R code chunks (```{r}); A plain Markdown post is rendered through Blackfriday, and an R Markdown document is compiled by rmarkdown and Pandoc.  There are many differences in syntax between Blackfriday&amp;rsquo;s Markdown and Pandoc&amp;rsquo;s Markdown.</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/2015/07/23/hello-r-markdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/2015/07/23/hello-r-markdown/</guid>
-      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
-    </item>
-    
-    <item>
-      <title>Lorem Ipsum</title>
-      <link>/2015/01/01/lorem-ipsum/</link>
-      <pubDate>Thu, 01 Jan 2015 13:09:13 -0600</pubDate>
-      
-      <guid>/2015/01/01/lorem-ipsum/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/1/01/01/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/1/01/01/</guid>
-      <description>Test 1code{white-space: pre;}pre:not([class]) {background-color: white;}if (window.hljs &amp;&amp; document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) {window.setTimeout(function() {hljs.initHighlighting();}, 0);}h1 {font-size: 34px;}h1.title {font-size: 38px;}h2 {font-size: 30px;}h3 {font-size: 24px;}h4 {font-size: 18px;}h5 {font-size: 16px;}h6 {font-size: 12px;}.table th:not([align]) {text-align: left;}.</description>
     </item>
     
   </channel>

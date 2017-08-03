@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tensorflow on A Hugo website</title>
+    <link>/tags/tensorflow/</link>
+    <description>Recent content in Tensorflow on A Hugo website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 01 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/tensorflow/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Creating a gray box neural network in TensorFlow</title>
+      <link>/2017/08/01/creating-a-gray-box-neural-network-in-tensorflow/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/08/01/creating-a-gray-box-neural-network-in-tensorflow/</guid>
+      <description>Generally neural networks act as black boxes. The input goes in, you get output, and there is interpretation of the data that helps you understand the model.
+A gray box means that we impose structure on the internal structure of the neural network, so that after the model is fit we can look at the estimated parameters and they will tell us something useful.
+One way we can do this is to encode an equation that we want to use near the end of the neural network.</description>
+    </item>
+    
+    <item>
+      <title>Getting started with TensorFlow in R</title>
+      <link>/2017/08/01/getting-started-with-tensorflow-in-r/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/08/01/getting-started-with-tensorflow-in-r/</guid>
+      <description>I have installed TensorFlow on my Windows laptop, and it appears to work using Python. I’m a heavy R user, so I’d like to be able to run TensorFlow through R (and RStudio).
+First I installed the tensorflow library
+install.packages(&amp;#39;tensorflow&amp;#39;)library(tensorflow)This warned me that my version of R wasn’t up to date. I updated R to 3.4.1 and RStudio to 1.0.153 to make sure that everything is the current version.</description>
+    </item>
+    
+    <item>
+      <title>Getting started with TensorFlow on Windows</title>
+      <link>/2017/08/01/getting-started-with-tensorflow-on-windows/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/08/01/getting-started-with-tensorflow-on-windows/</guid>
+      <description>I have wanted to try using TensorFlow for a while since it is very popular, and I think it might be able to solve a problem I’m working on this summer. I have a Windows 7 laptop, so I’ll be detailing the installation process for TensorFlow on a Windows computer.
+This is mostly for my own reference purposes, you will learn nothing by reading this. I’m just following the details provided by TensorFlow here https://www.</description>
+    </item>
+    
+  </channel>
+</rss>
