@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rcpp on Collin Erickson</title>
+    <link>/tags/rcpp/</link>
+    <description>Recent content in Rcpp on Collin Erickson</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 05 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/rcpp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Getting Rcpp to work with my R package</title>
+      <link>/2017/08/05/getting-rcpp-to-work-with-my-r-package/</link>
+      <pubDate>Sat, 05 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/08/05/getting-rcpp-to-work-with-my-r-package/</guid>
+      <description>I’ve been using Rcpp in my R package GauPro for over a year. I had it working with no errors/warnings/notes in the package check for a long time, but for the last half year I’ve kept getting the same note, shown below.
+checking compiled code ... NOTEFile &amp;#39;GauPro/libs/x64/GauPro.dll&amp;#39;:Found no calls to: &amp;#39;R_registerRoutines&amp;#39;, &amp;#39;R_useDynamicSymbols&amp;#39;It is good practice to register native routines and to disable symbolsearch.See &amp;#39;Writing portable packages&amp;#39; in the &amp;#39;Writing R Extensions&amp;#39; manual.</description>
+    </item>
+    
+  </channel>
+</rss>

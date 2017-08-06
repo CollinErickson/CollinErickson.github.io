@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/2017/08/05/getting-rcpp-to-work-with-my-r-package/</loc>
+    <lastmod>2017-08-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2017/08/03/running-tensorboard-on-windows/</loc>
+    <lastmod>2017-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2017/08/01/creating-a-gray-box-neural-network-in-tensorflow/</loc>
     <lastmod>2017-08-01T00:00:00+00:00</lastmod>
   </url>
@@ -27,24 +37,31 @@
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2017-08-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>/</loc>
+    <lastmod>2017-08-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/post/</loc>
-    <lastmod>2017-08-01T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/rcpp/</loc>
+    <lastmod>2017-08-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/</loc>
+    <lastmod>2017-08-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.20.7" />
+
+
+<title>Running TensorBoard on Windows - Collin Erickson</title>
+<meta property="og:title" content="Running TensorBoard on Windows - Collin Erickson">
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="../../../../css/fonts.css" media="all">
+<link rel="stylesheet" href="../../../../css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="../../../../" class="nav-logo">
+    <img src="../../../../images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="../../../../about/">About</a></li>
+    
+    <li><a href="https://github.com/CollinErickson">GitHub</a></li>
+    
+    <li><a href="https://twitter.com/collin_e">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">1 min read</span>
+    
+
+    <h1 class="article-title">Running TensorBoard on Windows</h1>
+
+    
+    <span class="article-date">2017/08/03</span>
+    
+
+    <div class="article-content">
+      <p>I have TensorFlow on my Windows 7 laptop and want to get Tensorboard to work. I’m hoping I can just follow the basic tutorial and get it to work, but usually some bugs will come up so I’m documenting the process.</p>
+<p>To begin I open an Anaconda Prompt and enter <code>activate tensorflow</code>, to activate the environment I created for TensorFlow.</p>
+<p>I am following the demo <a href="https://www.tensorflow.org/get_started/summaries_and_tensorboard">here</a>, so I run the MNIST model file which can be found <a href="https://raw.githubusercontent.com/tensorflow/tensorflow/r1.2/tensorflow/examples/tutorials/mnist/mnist_with_summaries.py">here</a>.</p>
+<p>Next I run</p>
+<pre><code>tensorboard --logdir=/tmp/tensorflow/mnist/logs/mnist_with_summaries</code></pre>
+<p>This gives a message in the prompt with the link to view the TensorBoard. Putting this into my browser brings up the TensorBoard. It worked on the first try!</p>
+<p>The screen looks like:</p>
+<div class="figure">
+<img src="C:/Users/cbe117/Documents/GitHub/website-hugo/static/images/tb-1.JPG" />
+
+</div>
+<!-- ![](tb-1.JPG) -->
+<!-- ![](./2017-08-03-running/tb-1.JPG) -->
+<!-- ![](../../static/post/TensorBoard-post/tb-1.JPG) -->
+<p>I’m most interested in viewing the graph. Clicking on the graph tab brings up:</p>
+<!-- ![](C:/Users/cbe117/Documents/GitHub/website-hugo/data/TensorBoard-post/tb-2.JPG) -->
+<div class="figure">
+<img src="C:/Users/cbe117/Documents/GitHub/website-hugo/static/images/tb-2.JPG" />
+
+</div>
+<p>This is pretty cool.</p>
+<p>Looking through the other tabs brings up great visualizations, like this one showing some of the values in the network over time:</p>
+<!-- ![](C:/Users/cbe117/Documents/GitHub/website-hugo/data/TensorBoard-post/tb-3.JPG) -->
+<div class="figure">
+<img src="C:/Users/cbe117/Documents/GitHub/website-hugo/static/images/tb-3.JPG" />
+
+</div>
+<p>In summary, TensorBoard is easy to use on Windows and provides great visualizations for neural networks. It remains to be seen how easy it is to create useful TensorBoards for my own projects, since all I did for this one was copy and paste.</p>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="../../../../index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="../../../../images/hugo-logo.png" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+
+    
+  </body>
+</html>
+

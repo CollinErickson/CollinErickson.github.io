@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.20.7" />
+
+
+<title>Getting Rcpp to work with my R package - Collin Erickson</title>
+<meta property="og:title" content="Getting Rcpp to work with my R package - Collin Erickson">
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="../../../../css/fonts.css" media="all">
+<link rel="stylesheet" href="../../../../css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="../../../../" class="nav-logo">
+    <img src="../../../../images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="../../../../about/">About</a></li>
+    
+    <li><a href="https://github.com/CollinErickson">GitHub</a></li>
+    
+    <li><a href="https://twitter.com/collin_e">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">2 min read</span>
+    
+
+    <h1 class="article-title">Getting Rcpp to work with my R package</h1>
+
+    
+    <span class="article-date">2017/08/05</span>
+    
+
+    <div class="article-content">
+      <p>I’ve been using Rcpp in my R package <a href="https://github.com/CollinErickson/GauPro">GauPro</a> for over a year. I had it working with no errors/warnings/notes in the package check for a long time, but for the last half year I’ve kept getting the same note, shown below.</p>
+<pre><code>checking compiled code ... NOTE
+File &#39;GauPro/libs/x64/GauPro.dll&#39;:
+  Found no calls to: &#39;R_registerRoutines&#39;, &#39;R_useDynamicSymbols&#39;
+
+It is good practice to register native routines and to disable symbol
+search.
+
+See &#39;Writing portable packages&#39; in the &#39;Writing R Extensions&#39; manual.
+R CMD check results
+0 errors | 0 warnings | 1 note 
+Warning message:
+`cleanup` is deprecated 
+
+R CMD check succeeded</code></pre>
+<p>I’ve repeatedly looked for answer to this problem. There’s a discussion <a href="https://github.com/RcppCore/Rcpp/issues/636">here</a>, where Dirk shows he’s not exactly the nicest guy out there despite the great work he’s done with Rcpp.</p>
+<p>There’s also this <a href="https://stackoverflow.com/questions/42313373/r-cmd-check-note-found-no-calls-to-r-registerroutines-r-usedynamicsymbols">Stack Overflow post</a> which appears to give a solution.</p>
+<p>I have R 3.4, had an init.c that seemed okay, added <code>@useDynLib packagename, .registration = TRUE</code> to my roxygen (and it showed up in my NAMESPACE), and my exports looked fine.</p>
+<p>I already had the init.c file, but I tried to remake it to see if that was an issue. For a long time I kept trying</p>
+<pre><code>tools::package_native_routine_registration_skeleton(&quot;.&quot;)</code></pre>
+<p>and it kept giving the output</p>
+<pre><code>Error in native_routine_registration_db_from_ff_call_db(calls, dir, character_only) : 
+  no native symbols were extracted</code></pre>
+<p>which was insanely frustrating.</p>
+<p>Just today I found <a href="https://github.com/kbenoit/quanteda/issues/846">this</a> GitHub issues thread with someone who had this problem, and the solution is to use</p>
+<pre><code>tools::package_native_routine_registration_skeleton(&quot;.&quot;, character_only = FALSE)</code></pre>
+<p>This was especially important since the Rcpp update a few weeks ago that added an underscore before each function name was making my package fail to load. Putting the output from the above function into my init.c file solved that problem. But I still get the same note as before.</p>
+<p>I just tried to uninstall and reinstall Rtools, but that didn’t help either.</p>
+<p>I tried submitting to winbuilder using <code>devtools::build_win</code>, to see if I get the same note there. The note doesn’t show up. Does this mean there is no problem with my package? Is it just something that shows up from my laptop?</p>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="../../../../index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="../../../../images/hugo-logo.png" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+
+    
+  </body>
+</html>
+
