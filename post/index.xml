@@ -27,7 +27,7 @@ checking compiled code ... NOTEFile &amp;#39;GauPro/libs/x64/GauPro.dll&amp;#39
       <pubDate>Thu, 03 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>/2017/08/03/running-tensorboard-on-windows/</guid>
-      <description>I have TensorFlow on my Windows 7 laptop and want to get Tensorboard to work. I’m hoping I can just follow the basic tutorial and get it to work, but usually some bugs will come up so I’m documenting the process.
+      <description>## NULLI have TensorFlow on my Windows 7 laptop and want to get Tensorboard to work. I’m hoping I can just follow the basic tutorial and get it to work, but usually some bugs will come up so I’m documenting the process.
 To begin I open an Anaconda Prompt and enter activate tensorflow, to activate the environment I created for TensorFlow.
 I am following the demo here, so I run the MNIST model file which can be found here.</description>
     </item>
