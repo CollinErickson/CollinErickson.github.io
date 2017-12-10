@@ -6,10 +6,31 @@
     <description>Recent content in Posts on Collin Erickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 05 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 04 Dec 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Using Snippets in RStudio as Keyboard Shortcuts</title>
+      <link>/2017/12/04/using-snippets-in-rstudio-as-keyboard-shortcuts/</link>
+      <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/12/04/using-snippets-in-rstudio-as-keyboard-shortcuts/</guid>
+      <description>Code Snippets are a useful feature of RStudio that many people don’t know about. The RStudio Blog post gives good instructions on how they can be used, but I thought I’d share how I use them.
+Here are some of the ways I use snippets:
+Loading MagrittrOne of my favorite R functions is the pipe operator, %&amp;gt;%, from the Magrittr package. There’s already a keyboard shortcut, Ctrl+Shift+M, for this function.</description>
+    </item>
+    
+    <item>
+      <title>How profvis helped give a 2x speedup by changing a single function call (answer: data frames can be really slow)</title>
+      <link>/2017/11/24/how-profvis-helped-give-a-2x-speedup-by-changing-a-single-function-call-answer-data-frames-can-be-really-slow/</link>
+      <pubDate>Fri, 24 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/11/24/how-profvis-helped-give-a-2x-speedup-by-changing-a-single-function-call-answer-data-frames-can-be-really-slow/</guid>
+      <description>Recently I’ve been running computationally intensive simulations that take up to six hours each. This is prohibitively slow, and is assuredly suboptimal since I coded it all, so I decided to do a time profile evaluation to find the bottlenecks in the code. This is easily done in R using the eponymous function from the package profvis.
+The following example shows how to use profvis.</description>
+    </item>
     
     <item>
       <title>Getting Rcpp to work with my R package</title>

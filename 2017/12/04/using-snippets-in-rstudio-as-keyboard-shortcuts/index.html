@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.20.7" />
+
+
+<title>Using Snippets in RStudio as Keyboard Shortcuts - Collin Erickson</title>
+<meta property="og:title" content="Using Snippets in RStudio as Keyboard Shortcuts - Collin Erickson">
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="../../../../css/fonts.css" media="all">
+<link rel="stylesheet" href="../../../../css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="../../../../" class="nav-logo">
+    <img src="../../../../images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="../../../../about/">About</a></li>
+    
+    <li><a href="https://github.com/CollinErickson">GitHub</a></li>
+    
+    <li><a href="https://twitter.com/collin_e">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">2 min read</span>
+    
+
+    <h1 class="article-title">Using Snippets in RStudio as Keyboard Shortcuts</h1>
+
+    
+    <span class="article-date">2017/12/04</span>
+    
+
+    <div class="article-content">
+      <p><a href="https://support.rstudio.com/hc/en-us/articles/204463668-Code-Snippets">Code Snippets</a> are a useful feature of RStudio that many people don’t know about. The RStudio Blog post gives good instructions on how they can be used, but I thought I’d share how I use them.</p>
+<p>Here are some of the ways I use snippets:</p>
+<div id="loading-magrittr" class="section level2">
+<h2>Loading Magrittr</h2>
+<p>One of my favorite R functions is the pipe operator, <code>%&gt;%</code>, from the Magrittr package. There’s already a keyboard shortcut, Ctrl+Shift+M, for this function. However, it’s really annoying when I first try to use it and I get the error message that the function could not be found. All that is required is to then call <code>library(magrittr)</code>, but that’s a lot of typing (not really, but it feels that way). So I created a snippet, <code>lbm</code>, to speed this up, shown below.</p>
+<pre><code>snippet lbm
+    library(magrittr)</code></pre>
+<p>Now if I type <code>lbm</code>, then press tab, it inserts <code>library(magrittr)</code> for me.</p>
+</div>
+<div id="loading-other-packages" class="section level2">
+<h2>Loading other packages</h2>
+<p>Similar to Magrittr, there are other packages that I often need to load. So I can create a snippet in the exact same way as above (these two sections could really just be one section). Right now I have snippets to load testthat (<code>lbtt</code>) and three of my own packages: <code>lbcf</code> for ContourFunctions, <code>lbtf</code> for TestFunctions, and <code>lbgp</code> for GauPro.</p>
+</div>
+<div id="shortcuts-for-functions-with-long-names" class="section level2">
+<h2>Shortcuts for functions with long names</h2>
+<p>A similar way I use snippets are as shortcuts for functions with long names. I love the <code>microbenchmark</code> package and function, but it’s name, especially typing it when the package isn’t loaded, is far too long. I created a snippet, <code>mb</code>, that is much shorter. I also created another one, <code>mbc</code>, for the <code>mbc</code> function in my <code>comparer</code> package. Both are shown below.</p>
+<pre><code>snippet mb
+    microbenchmark::microbenchmark
+
+snippet mbc
+    comparer::mbc</code></pre>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="../../../../index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="../../../../images/hugo-logo.png" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+
+    
+  </body>
+</html>
+
