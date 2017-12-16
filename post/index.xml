@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Collin Erickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Dec 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How I create a new post using Hugo, RStudio, and Git</title>
+      <link>/2017/12/11/how-i-create-a-new-post-using-hugo-rstudio-and-git/</link>
+      <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/12/11/how-i-create-a-new-post-using-hugo-rstudio-and-git/</guid>
+      <description>I am writing this because I forget myself how to do this. I set up this blog through GitHub following the instructions provided by Robert Myles. Now when I want to make a new post I do the following
+1. Opened RStudio to my website-hugo project.2. Create a new postThe posts are created and built using the R package blogdown. To create the new post, I use blogdown::new_post(title=&#39;&amp;lt;insert post name here&amp;gt;&#39;, ext=&#39;.</description>
+    </item>
     
     <item>
       <title>Using Snippets in RStudio as Keyboard Shortcuts</title>

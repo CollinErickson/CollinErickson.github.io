@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.20.7" />
+
+
+<title>How I create a new post using Hugo, RStudio, and Git - Collin Erickson</title>
+<meta property="og:title" content="How I create a new post using Hugo, RStudio, and Git - Collin Erickson">
+
+
+
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" href="../../../../css/fonts.css" media="all">
+<link rel="stylesheet" href="../../../../css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="../../../../" class="nav-logo">
+    <img src="../../../../images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="../../../../about/">About</a></li>
+    
+    <li><a href="https://github.com/CollinErickson">GitHub</a></li>
+    
+    <li><a href="https://twitter.com/collin_e">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">2 min read</span>
+    
+
+    <h1 class="article-title">How I create a new post using Hugo, RStudio, and Git</h1>
+
+    
+    <span class="article-date">2017/12/11</span>
+    
+
+    <div class="article-content">
+      <p>I am writing this because I forget myself how to do this. I set up this blog through GitHub following <a href="http://robertmyles.github.io/2017/02/01/how-to-make-a-github-pages-blog-with-rstudio-and-hugo/">the instructions provided by Robert Myles</a>. Now when I want to make a new post I do the following</p>
+<div id="opened-rstudio-to-my-website-hugo-project." class="section level2">
+<h2>1. Opened RStudio to my website-hugo project.</h2>
+</div>
+<div id="create-a-new-post" class="section level2">
+<h2>2. Create a new post</h2>
+<p>The posts are created and built using the R package blogdown. To create the new post, I use <code>blogdown::new_post(title='&lt;insert post name here&gt;', ext='.Rmd')</code>. Using <code>ext='.Rmd'</code> makes it a .Rmd file instead of a .md file. This argument used to be <code>rmd=T</code>, but was changed sometime in the last 4 months.</p>
+</div>
+<div id="serve-site" class="section level2">
+<h2>3. Serve site</h2>
+<p>Use <code>blogdown::serve_site()</code> to evaluate the .Rmd file and make it a .html file.</p>
+<p>Do not use <code>blogdown::build_site()</code>. This will rebuild all previous posts, too, which is not wanted. This was especially bad since I no longer had my TensorFlow working, so it failed.</p>
+</div>
+<div id="commit-files-to-git" class="section level2">
+<h2>4. Commit files to Git</h2>
+</div>
+<div id="commit-public-folder-to-git" class="section level2">
+<h2>5. Commit public folder to Git</h2>
+<p>This part is a little bit complicated, or at least it is usually what causes me trouble. I use GitKraken to manage my Git repositories. In GitKraken I have to open the public folder and commit all the changes. This copies the changes over to my github.io Git project, which makes it show up on my blog.</p>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="../../../../index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="../../../../images/hugo-logo.png" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+    
+
+    
+  </body>
+</html>
+
