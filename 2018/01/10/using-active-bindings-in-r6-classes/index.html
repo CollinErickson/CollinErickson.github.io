@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.20.7" />
+
+
+<title>Using active bindings in R6 classes - Collin Erickson</title>
+<meta property="og:title" content="Using active bindings in R6 classes - Collin Erickson">
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="../../../../css/fonts.css" media="all">
+<link rel="stylesheet" href="../../../../css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="../../../../" class="nav-logo">
+    <img src="../../../../images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="../../../../about/">About</a></li>
+    
+    <li><a href="https://github.com/CollinErickson">GitHub</a></li>
+    
+    <li><a href="https://twitter.com/collin_e">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">6 min read</span>
+    
+
+    <h1 class="article-title">Using active bindings in R6 classes</h1>
+
+    
+    <span class="article-date">2018/01/10</span>
+    
+
+    <div class="article-content">
+      <p>I’ve used <a href="https://cran.r-project.org/web/packages/R6/vignettes/Introduction.html">R6</a> classes in a lot of my R projects in recent years. They are easier to understand than S3 and S4 objects if you’ve ever done programming with objects in other languages. I also am still not sure how I can have functions act on data in an S3 object. I think it’s not possible, but I’m really not sure. And R6 classes are definitely better than RC objects.</p>
+<p>Active bindings allow R6 fields to act like functions (or to have functions look like fields). My main reason for writing this is to see how slow accessing active binding fields of R6 classes is.</p>
+<div id="what-is-an-r6-class" class="section level2">
+<h2>What is an R6 class?</h2>
+<p>Shortly, R6 classes allow you to create objects to store data and functions that act on the data. This allows you to create multiple instances of the same class that will have the same functions available.</p>
+<p>For example, below I’ve defined a <code>Circle</code> class, which I’ll explain below.</p>
+<pre class="r"><code>Circle &lt;- R6::R6Class(
+  classname = &quot;Circle&quot;,
+  public = list(
+    radius = NULL,
+    area = function() {
+      pi * self$radius ^ 2
+    },
+    initialize = function(radius) {
+      self$radius &lt;- radius
+    }
+  )
+)</code></pre>
+<p>You give the variable a name as usual, but you also give a class name as an argument. These don’t have to be the same. The first is what you’ll type to create a new one, the latter is what will show up when you call <code>class</code>. Then the second argument is <code>public</code>, a list of items or functions associated with the object. I have defined a variable <code>radius</code> and a function <code>area</code>. I set the radius to <code>NULL</code> by default. The function <code>area</code> calculates the area using the <code>radius</code> associated with the object. Using <code>self$</code> is how you can access these. Finally I also defined an <code>initialize</code> function, which is what will be called when I create a new <code>Circle</code>.</p>
+<p>To create a new Circle I call <code>Circle$new(&lt;arguments passed to initialize&gt;)</code>. Below I create a <code>Circle</code> with radius 2 and print the radius and calculate the area.</p>
+<pre class="r"><code>c1 &lt;- Circle$new(radius = 2)
+print(c(c1$radius, c1$area()))</code></pre>
+<pre><code>## [1]  2.00000 12.56637</code></pre>
+<p>I can change the radius by simply assigning it a new value.</p>
+<pre class="r"><code>c1$radius &lt;- 4
+print(c(c1$radius, c1$area()))</code></pre>
+<pre><code>## [1]  4.00000 50.26548</code></pre>
+<p>You can also create private functions/variables. For a more in-depth look at how to use <code>R6</code>, check the link above or other sites. This is not meant to be a comprehensive explanation.</p>
+</div>
+<div id="how-to-use-active-bindings" class="section level2">
+<h2>How to use active bindings</h2>
+<p>Suppose we wanted to add <code>diameter</code> to the <code>Circle</code> class. I could add it as a function, just as I already have <code>area</code>. I could even write the function to take a new value of diameter so that it would update the radius at the same time. But instead suppose I want to have it as a variable that can be set. Then I’d be able to change the radius or diameter. But then whenever I change one, I’d need to change the other so they are in agreement. Here’s where I can use active bindings so it still looks like they are variables despite them actually acting like functions.</p>
+<p>Below I define the <code>Circle2</code> class to do this. An active binding it actually a function. If it is assigned a value, then the corresponding function is evaluated, using the value given as the argument <code>value</code>. If no value is given, i.e. the field is just called and not assigned, then the <code>value</code> argument is missing. The function should be defined to act one way when assigned a value, and another when not.</p>
+<pre class="r"><code>Circle2 &lt;- R6::R6Class(
+  classname = &quot;Circle2&quot;,
+  public = list(
+    radius = NULL,
+    area = function() {
+      pi * self$radius ^ 2
+    },
+    initialize = function(radius) {
+      self$radius &lt;- radius
+    }
+  ),
+  active = list(
+    diameter = function(value) {
+      if (missing(value)) {2*self$radius}
+      else self$radius &lt;- value / 2
+    }
+  )
+)</code></pre>
+<p>Now if I create one of these objects, I can set the <code>radius</code>, access the <code>diameter</code> as a field, and then when I set the <code>diameter</code> it will automatically change the <code>radius</code> to match it.</p>
+<pre class="r"><code>c2 &lt;- Circle2$new(radius=2)
+print(c(c2$radius, c2$diameter, c2$area()))</code></pre>
+<pre><code>## [1]  2.00000  4.00000 12.56637</code></pre>
+<pre class="r"><code>c2$diameter &lt;- 10
+print(c(c2$radius, c2$diameter, c2$area()))</code></pre>
+<pre><code>## [1]  5.00000 10.00000 78.53982</code></pre>
+<p>On my recent projects I’ve considered using active bindings when I have a variable that I want to store in two formats, e.g. as itself and on a log scale. My main concern with this is that using active bindings will be slow.</p>
+</div>
+<div id="are-active-bindings-slow" class="section level2">
+<h2>Are active bindings slow?</h2>
+<p>My goal of writing this is to find out how slow active bindings are to use. It seems like there should be an overhead cost to use something that is flexible and requires the machine determining which action to take. I will use <code>microbenchmark</code> to time these and see how fast they are.</p>
+<p>First I’ll just try to access the <code>radius</code>, a normal field, from <code>c2</code>, the <code>diameter</code>, an active binding, of <code>c2</code>, and compare these two just multiplying the <code>radius</code> by 2.</p>
+<pre class="r"><code>microbenchmark::microbenchmark(
+  c2$radius,
+  c2$diameter,
+  {c2$radius * 2}
+)</code></pre>
+<pre><code>## Unit: nanoseconds
+##                   expr  min   lq    mean median   uq   max neval cld
+##              c2$radius  760  760 1144.27   1140 1141 18626   100  a 
+##            c2$diameter 2280 2661 2984.01   2661 3041 11784   100   b
+##  {     c2$radius * 2 }  760 1140 1239.29   1141 1520  2280   100  a</code></pre>
+<p>First we see by comparing the first and third line that the multiplication by 2 takes almost no time. Second by comparing these to the second line we see that there is a small cost to using the active binding. On my computer this is less than 2 microseconds, meaning that it is negligible unless calling these tons of times.</p>
+<p>Next I want to compare how much longer it takes to assign an active binding. Here we set the <code>radius</code> and <code>diameter</code> to a random value. Recall that setting the active binding really is just calling a function to set the radius to half of the given value.</p>
+<pre class="r"><code>microbenchmark::microbenchmark(
+  {c2$radius &lt;- runif(1)},
+  {c2$diameter &lt;- runif(1)}
+)</code></pre>
+<pre><code>## Unit: microseconds
+##                             expr   min    lq    mean median    uq     max
+##    {     c2$radius &lt;- runif(1) } 2.660 3.041 3.63399  3.421 3.801  11.403
+##  {     c2$diameter &lt;- runif(1) } 5.321 5.702 7.50365  6.462 6.842 100.730
+##  neval cld
+##    100  a 
+##    100   b</code></pre>
+<p>We see that it takes twice as long to set the active binding, but the difference on my computer is still only 3 microseconds. This tells me that I shouldn’t worry about the slowdown of active bindings unless I am calling them thousands or millions of times. And since the code I was considering using them on did lots of matrix equation solving, it wouldn’t hurt the performance in any noticeable way.</p>
+</div>
+<div id="conclusion" class="section level2">
+<h2>Conclusion</h2>
+<p>Active bindings are a useful part of <code>R6</code> classes when the fields are entangled in some way. They can also be used when randomness is involved in each access, which I did not cover here. Accessing them is quite fast and should not cause any speed problems unless they are called millions of times.</p>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="../../../../index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="../../../../images/hugo-logo.png" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="../../../../js/math-code.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  }
+});
+</script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
+

@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Collin Erickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 10 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Using active bindings in R6 classes</title>
+      <link>/2018/01/10/using-active-bindings-in-r6-classes/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/01/10/using-active-bindings-in-r6-classes/</guid>
+      <description>I’ve used R6 classes in a lot of my R projects in recent years. They are easier to understand than S3 and S4 objects if you’ve ever done programming with objects in other languages. I also am still not sure how I can have functions act on data in an S3 object. I think it’s not possible, but I’m really not sure. And R6 classes are definitely better than RC objects.</description>
+    </item>
     
     <item>
       <title>How I create a new post using Hugo, RStudio, and Git</title>
