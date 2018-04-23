@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Collin Erickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Using crossprod in R</title>
+      <link>/2018/04/23/using-crossprod-in-r/</link>
+      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/04/23/using-crossprod-in-r/</guid>
+      <description>Often I have come across the function crossprod in R, and found that it didn’t have much effect. Here I will explore if it is useful and when.
+The function crossprod(x,y) is equivalent to t(x) %*% y, i.e., allows you to multiply two matrices or vectors, where the transpose of the first argument is used. There is also the function tcrossprod to transpose the second argument. The function allows you to avoid the operation of finding the transpose, and thus should be faster.</description>
+    </item>
     
     <item>
       <title>Don&#39;t invert that matrix in R</title>
