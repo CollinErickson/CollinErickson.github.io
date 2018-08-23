@@ -6,10 +6,20 @@
     <description>Recent content on Collin Erickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 04 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to load a pretrained model in TensorFlow</title>
+      <link>/2018/08/04/how-to-load-a-pretrained-model-in-tensorflow/</link>
+      <pubDate>Sat, 04 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/08/04/how-to-load-a-pretrained-model-in-tensorflow/</guid>
+      <description>At work I struggled for days to load a pretrained model intoTensorFlow before giving up.Then a few weeks later I tried again and it worked fine.I’m going to try to do it again here to make sureI can get it to work.
+Why you would use a pretrained modelPretrained models are especially useful for image classification.The convolutional neural networks (CNNs) used for image classificationoften have eight or more layers and over a million parameters.</description>
+    </item>
     
     <item>
       <title>Running Python in RStudio with reticulate</title>
