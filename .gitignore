@@ -2,3 +2,5 @@
 .Rhistory
 .RData
 .Ruserdata
+
+post/2018-08-04-how-to-load-a-pretrained-model-in-tensorflow/inception_resnet_v2_2016_08_30\.ckpt
