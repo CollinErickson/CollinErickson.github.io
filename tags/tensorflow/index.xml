@@ -6,10 +6,20 @@
     <description>Recent content in Tensorflow on Collin Erickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/tensorflow/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Creating an autoencoder with TensorFlow in R</title>
+      <link>/2018/08/22/creating-an-autoencoder-with-tensorflow-in-r/</link>
+      <pubDate>Wed, 22 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/08/22/creating-an-autoencoder-with-tensorflow-in-r/</guid>
+      <description>Once again I’m going to be trying something new,and mainly just using this blog post to track itfor later reference.This time I am going to implement an autoencoder,and I’m going to use the R interface to TensorFlowto do it.
+DataI’m not going to use real data.I’m just going to creating a function that will give a sequenceof numbers.These will be fed into the network, with the goal beingto get the same thing out on the other side.</description>
+    </item>
     
     <item>
       <title>How to load a pretrained model in TensorFlow</title>
