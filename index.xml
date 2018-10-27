@@ -6,10 +6,21 @@
     <description>Recent content on Collin Erickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 20 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Trying the R package ggrough</title>
+      <link>/2018/10/20/trying-the-r-package-ggrough/</link>
+      <pubDate>Sat, 20 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/10/20/trying-the-r-package-ggrough/</guid>
+      <description>I recently came across the R package ggrough after seeingthis tweetwhile checking the #rstats topic on Twitter.It makes plots that look like they were haphazardly sketched.I figured I’d give it a try to see if I could get it to work.
+You can find it on GitHub here.The package is still in progress and has many problems.
+Set upFirst you need to install ggrough.</description>
+    </item>
     
     <item>
       <title>Creating an autoencoder with TensorFlow in R</title>
