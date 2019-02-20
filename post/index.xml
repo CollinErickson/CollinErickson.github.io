@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Collin Erickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Oct 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 26 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>What is spectral clustering?</title>
+      <link>/2018/10/26/what-is-spectral-clustering/</link>
+      <pubDate>Fri, 26 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/10/26/what-is-spectral-clustering/</guid>
+      <description>I had never heard of spectral clustering until last week.Then I came acrossthis imagecomparing 9 clustering algorithms on different 2D datasets.
+knitr::include_graphics(&amp;quot;https://scikit-learn.org/stable/_images/sphx_glr_plot_cluster_comparison_001.png&amp;quot;)It appeared to me that spectral clustering did the best across all the data,and I realized that the only clustering algorithm I understood was k-means.(DBSCAN might be better based on the results shown, but one step at a time.)So here I’m going to try to figure out what spectral clustering is and how I can implement it.</description>
+    </item>
     
     <item>
       <title>Trying the R package ggrough</title>
