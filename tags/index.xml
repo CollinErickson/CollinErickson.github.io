@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Baseball</title>
+      <link>/tags/baseball/</link>
+      <pubDate>Mon, 18 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/baseball/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Clustering</title>
       <link>/tags/clustering/</link>
       <pubDate>Fri, 26 Oct 2018 00:00:00 +0000</pubDate>
@@ -39,6 +48,15 @@
     </item>
     
     <item>
+      <title>Mlbgameday</title>
+      <link>/tags/mlbgameday/</link>
+      <pubDate>Mon, 18 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/mlbgameday/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Python</title>
       <link>/tags/python/</link>
       <pubDate>Mon, 25 Jun 2018 00:00:00 +0000</pubDate>
@@ -50,7 +68,7 @@
     <item>
       <title>R</title>
       <link>/tags/r/</link>
-      <pubDate>Wed, 22 Aug 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 18 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/r/</guid>
       <description></description>

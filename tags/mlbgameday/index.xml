@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mlbgameday on Collin Erickson</title>
+    <link>/tags/mlbgameday/</link>
+    <description>Recent content in Mlbgameday on Collin Erickson</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/mlbgameday/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Getting started with R package mlbgameday</title>
+      <link>/2019/03/18/getting-started-with-r-package-mlbgameday/</link>
+      <pubDate>Mon, 18 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/03/18/getting-started-with-r-package-mlbgameday/</guid>
+      <description>I’m going to start digging into baseball statistics.There are a couple of R packages that facilitate the collecting of datafrom MLB.I’ll be using the R package mlbgameday, mostly because I saw that it wasrecently updated.
+Getting some dataFirst we load the package.Along with a couple of other of packages that we’ll need.
+library(mlbgameday)library(dplyr)## ## Attaching package: &amp;#39;dplyr&amp;#39;## The following objects are masked from &amp;#39;package:stats&amp;#39;:## ## filter, lag## The following objects are masked from &amp;#39;package:base&amp;#39;:## ## intersect, setdiff, setequal, unionlibrary(ggplot2)library(magrittr)Now we’ll grab some data.</description>
+    </item>
+    
+  </channel>
+</rss>
