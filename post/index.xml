@@ -6,10 +6,22 @@
     <description>Recent content in Posts on Collin Erickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Looking at pitches with the R package mlbgameday</title>
+      <link>/2019/03/19/looking-at-pitches-with-the-r-package-mlbgameday/</link>
+      <pubDate>Tue, 19 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/03/19/looking-at-pitches-with-the-r-package-mlbgameday/</guid>
+      <description>I’ll be continuing on from the last post.
+Load packages first.
+library(mlbgameday)library(dplyr)## ## Attaching package: &amp;#39;dplyr&amp;#39;## The following objects are masked from &amp;#39;package:stats&amp;#39;:## ## filter, lag## The following objects are masked from &amp;#39;package:base&amp;#39;:## ## intersect, setdiff, setequal, unionlibrary(ggplot2)library(magrittr)Get some data.
+dat &amp;lt;- get_payload(start = &amp;quot;2018-08-22&amp;quot;, end = &amp;quot;2018-08-22&amp;quot;)## Gathering Gameday data, please be patient...## Warning: executing %dopar% sequentially: no parallel backend registeredWe’re going to be looking at dat$pitch.</description>
+    </item>
     
     <item>
       <title>Getting started with R package mlbgameday</title>
