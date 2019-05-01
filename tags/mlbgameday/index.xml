@@ -6,10 +6,21 @@
     <description>Recent content in Mlbgameday on Collin Erickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 29 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/mlbgameday/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Using mlbgameday to see what pitches get hit</title>
+      <link>/2019/04/29/using-mlbgameday-to-see-what-pitches-get-hit/</link>
+      <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/04/29/using-mlbgameday-to-see-what-pitches-get-hit/</guid>
+      <description>Load packages
+library(mlbgameday)library(dplyr)## ## Attaching package: &amp;#39;dplyr&amp;#39;## The following objects are masked from &amp;#39;package:stats&amp;#39;:## ## filter, lag## The following objects are masked from &amp;#39;package:base&amp;#39;:## ## intersect, setdiff, setequal, unionlibrary(ggplot2)library(magrittr)Get data. Using arbitrary dates.
+dat &amp;lt;- get_payload(start = &amp;quot;2018-08-01&amp;quot;, end = &amp;quot;2018-08-31&amp;quot;)## Gathering Gameday data, please be patient...## Warning: executing %dopar% sequentially: no parallel backend registeredThis siteis useful for deciphering fields.</description>
+    </item>
     
     <item>
       <title>Looking at pitches with the R package mlbgameday</title>
