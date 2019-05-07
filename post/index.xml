@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Collin Erickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Swings and Misses</title>
+      <link>/2019/05/06/swings-and-misses/</link>
+      <pubDate>Mon, 06 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/05/06/swings-and-misses/</guid>
+      <description>I going to work more with data from mlbgameday.
+library(mlbgameday)library(magrittr)library(ggplot2)library(dplyr)## ## Attaching package: &amp;#39;dplyr&amp;#39;## The following objects are masked from &amp;#39;package:stats&amp;#39;:## ## filter, lag## The following objects are masked from &amp;#39;package:base&amp;#39;:## ## intersect, setdiff, setequal, unionGet data.
+# Takes hours to get all the data for the yeardat &amp;lt;- get_payload(start = &amp;quot;2018-01-01&amp;quot;, end = &amp;quot;2018-12-31&amp;quot;)Get pitcher names from at bat data.</description>
+    </item>
     
     <item>
       <title>Using mlbgameday to see what pitches get hit</title>
