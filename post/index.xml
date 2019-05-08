@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Collin Erickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>BABIP</title>
+      <link>/2019/05/07/babip/</link>
+      <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/05/07/babip/</guid>
+      <description>Recently I was reading about pitchers having no control over results of a ball in play.This is the main idea behind FIP/DIPS.This goes against the common idea that pitchers can be good if they induce weak contact.I’m going to investigate this in this post.
+Similar to last time, I’m using the same data from mlbgameday.
+library(mlbgameday)library(magrittr)library(ggplot2)library(dplyr)## ## Attaching package: &amp;#39;dplyr&amp;#39;## The following objects are masked from &amp;#39;package:stats&amp;#39;:## ## filter, lag## The following objects are masked from &amp;#39;package:base&amp;#39;:## ## intersect, setdiff, setequal, unionGet data.</description>
+    </item>
     
     <item>
       <title>Swings and Misses</title>
