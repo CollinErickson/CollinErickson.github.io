@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/2019/05/09/babip-part-2/</loc>
+    <lastmod>2019-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2019/05/07/babip/</loc>
     <lastmod>2019-05-07T00:00:00+00:00</lastmod>
   </url>
@@ -124,7 +129,7 @@
   
   <url>
     <loc>/tags/baseball/</loc>
-    <lastmod>2019-05-07T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -141,7 +146,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-05-07T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -153,13 +158,13 @@
   
   <url>
     <loc>/tags/mlbgameday/</loc>
-    <lastmod>2019-05-07T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-05-07T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -170,14 +175,14 @@
   </url>
   
   <url>
-    <loc>/categories/r/</loc>
-    <lastmod>2017-12-04T00:00:00+00:00</lastmod>
+    <loc>/tags/r/</loc>
+    <lastmod>2019-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/r/</loc>
-    <lastmod>2019-05-07T00:00:00+00:00</lastmod>
+    <loc>/categories/r/</loc>
+    <lastmod>2017-12-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
