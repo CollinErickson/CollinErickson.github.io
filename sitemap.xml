@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/2019/05/11/expected-runs-for-every-game-state/</loc>
+    <lastmod>2019-05-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2019/05/09/babip-part-2/</loc>
     <lastmod>2019-05-09T00:00:00+00:00</lastmod>
   </url>
@@ -129,7 +134,7 @@
   
   <url>
     <loc>/tags/baseball/</loc>
-    <lastmod>2019-05-09T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -146,7 +151,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-05-09T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -158,13 +163,13 @@
   
   <url>
     <loc>/tags/mlbgameday/</loc>
-    <lastmod>2019-05-09T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-05-09T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -176,7 +181,7 @@
   
   <url>
     <loc>/tags/r/</loc>
-    <lastmod>2019-05-09T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -6,10 +6,19 @@
     <description>Recent content in Baseball on Collin Erickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/baseball/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Expected runs for every game state</title>
+      <link>/2019/05/11/expected-runs-for-every-game-state/</link>
+      <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/05/11/expected-runs-for-every-game-state/</guid>
+      <description>A state in a baseball game is defined by the number outs and which bases have baserunners.We could include the count, inning, etc, but we’re starting with the simplest version.For a given state, there is an expected number of runs a team would score inthe remainder of that inning.These tables are readily available online.I want to try to recreate the tables using data from mlbgameday package.</description>
+    </item>
     
     <item>
       <title>BABIP part 2</title>
