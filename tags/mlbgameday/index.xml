@@ -6,10 +6,20 @@
     <description>Recent content in Mlbgameday on Collin Erickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/mlbgameday/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Nasty pitches</title>
+      <link>/2019/05/14/nasty-pitches/</link>
+      <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/05/14/nasty-pitches/</guid>
+      <description>library(mlbgameday)library(magrittr)library(ggplot2)library(dplyr)## ## Attaching package: &amp;#39;dplyr&amp;#39;## The following objects are masked from &amp;#39;package:stats&amp;#39;:## ## filter, lag## The following objects are masked from &amp;#39;package:base&amp;#39;:## ## intersect, setdiff, setequal, unionPitches from PITCHf/x have a feature called nastythat somehow estimates the nastiness of a pitch.https://tht.fangraphs.com/tht-live/gameday-pitchf-x-changes-for-2010/gives a short description of it.
+The “nasty” field is presumably a crude attempt to calculate how hard to hit a particular pitch was, on a scale of 0-100.</description>
+    </item>
     
     <item>
       <title>Expected runs for every game state</title>
