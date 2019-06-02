@@ -12,6 +12,17 @@
     
     
     <item>
+      <title>On what counts do batters swing?</title>
+      <link>/2019/06/01/on-what-counts-do-batters-swing/</link>
+      <pubDate>Sat, 01 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/06/01/on-what-counts-do-batters-swing/</guid>
+      <description>Recently I’ve heard some things about when batters should swing.Many hitters take the first pitch of an at bat to get a feel for the pitcher.All hitters should take on 3-0.
+I want to look at the rate at which batters swing based on the count.
+library(magrittr)library(ggplot2)## Registered S3 methods overwritten by &amp;#39;ggplot2&amp;#39;:## method from ## [.quosures rlang## c.quosures rlang## print.quosures rlanglibrary(dplyr)## ## Attaching package: &amp;#39;dplyr&amp;#39;## The following objects are masked from &amp;#39;package:stats&amp;#39;:## ## filter, lag## The following objects are masked from &amp;#39;package:base&amp;#39;:## ## intersect, setdiff, setequal, unionLoad the data as d</description>
+    </item>
+    
+    <item>
       <title>Using launch angle data</title>
       <link>/2019/06/01/using-launch-angle-data/</link>
       <pubDate>Sat, 01 Jun 2019 00:00:00 +0000</pubDate>
