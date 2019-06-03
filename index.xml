@@ -6,10 +6,21 @@
     <description>Recent content on Collin Erickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 02 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Getting started with RStan</title>
+      <link>/2019/06/02/getting-started-with-rstan/</link>
+      <pubDate>Sun, 02 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/06/02/getting-started-with-rstan/</guid>
+      <description>I’m trying to learn more about Bayesian modeling,and I want to try to use Bugs/Jags/RStan.RStudio seems to have the most support for RStan(File -&amp;gt; New file has an option for a Stan file,but not the others).So my goal for now is to get a simple example workingusing RStan.
+I started by following this blog post:https://www.r-bloggers.com/hierarchical-models-with-rstan-part-1/
+Getting errorsHere’s the data in R that needs to be included.</description>
+    </item>
     
     <item>
       <title>On what counts do batters swing?</title>
