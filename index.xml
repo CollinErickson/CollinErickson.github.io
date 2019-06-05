@@ -6,10 +6,19 @@
     <description>Recent content on Collin Erickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Calculating park factors</title>
+      <link>/2019/06/04/calculating-park-factors/</link>
+      <pubDate>Tue, 04 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/06/04/calculating-park-factors/</guid>
+      <description>I’ve been thinking a bit about park factors recently.A lot of stats are pretty meaningless without context.40 home runs for a Rockies player is not as good as 40home runs for a Dodgers player because Coors is much morehitter-friendly.Park factors are used to determine how many runs are scored atany given stadium compared to the rest of the league.+/- stats like OPS+ and ERA- adjust for the stadium,making comparisons for players across teams more fair.</description>
+    </item>
     
     <item>
       <title>Getting started with RStan</title>
