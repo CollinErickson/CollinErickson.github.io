@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Collin Erickson</title>
@@ -6,22 +6,9 @@
     <description>Recent content in Tags on Collin Erickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Aug 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 04 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Autoencoder</title>
-      <link>/tags/autoencoder/</link>
-      <pubDate>Wed, 22 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/autoencoder/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Baseball</title>
+      <title>baseball</title>
       <link>/tags/baseball/</link>
       <pubDate>Tue, 04 Jun 2019 00:00:00 +0000</pubDate>
       
@@ -30,7 +17,34 @@
     </item>
     
     <item>
-      <title>Clustering</title>
+      <title>r</title>
+      <link>/tags/r/</link>
+      <pubDate>Tue, 04 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RStan</title>
+      <link>/tags/rstan/</link>
+      <pubDate>Sun, 02 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/rstan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mlbgameday</title>
+      <link>/tags/mlbgameday/</link>
+      <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/mlbgameday/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>clustering</title>
       <link>/tags/clustering/</link>
       <pubDate>Fri, 26 Oct 2018 00:00:00 +0000</pubDate>
       
@@ -39,7 +53,7 @@
     </item>
     
     <item>
-      <title>Data Science</title>
+      <title>data science</title>
       <link>/tags/data-science/</link>
       <pubDate>Fri, 26 Oct 2018 00:00:00 +0000</pubDate>
       
@@ -48,11 +62,20 @@
     </item>
     
     <item>
-      <title>Mlbgameday</title>
-      <link>/tags/mlbgameday/</link>
-      <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
+      <title>autoencoder</title>
+      <link>/tags/autoencoder/</link>
+      <pubDate>Wed, 22 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/mlbgameday/</guid>
+      <guid>/tags/autoencoder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TensorFlow</title>
+      <link>/tags/tensorflow/</link>
+      <pubDate>Wed, 22 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/tensorflow/</guid>
       <description></description>
     </item>
     
@@ -66,11 +89,11 @@
     </item>
     
     <item>
-      <title>R</title>
-      <link>/tags/r/</link>
-      <pubDate>Tue, 04 Jun 2019 00:00:00 +0000</pubDate>
+      <title>RStudio</title>
+      <link>/tags/rstudio/</link>
+      <pubDate>Mon, 25 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/r/</guid>
+      <guid>/tags/rstudio/</guid>
       <description></description>
     </item>
     
@@ -89,33 +112,6 @@
       <pubDate>Sat, 05 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/rcpp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rstan</title>
-      <link>/tags/rstan/</link>
-      <pubDate>Sun, 02 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/rstan/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rstudio</title>
-      <link>/tags/rstudio/</link>
-      <pubDate>Mon, 25 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/rstudio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tensorflow</title>
-      <link>/tags/tensorflow/</link>
-      <pubDate>Wed, 22 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/tensorflow/</guid>
       <description></description>
     </item>
     

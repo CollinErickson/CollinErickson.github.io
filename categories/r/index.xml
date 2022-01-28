@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>R on Collin Erickson</title>
+    <title>r on Collin Erickson</title>
     <link>/categories/r/</link>
-    <description>Recent content in R on Collin Erickson</description>
+    <description>Recent content in r on Collin Erickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Dec 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 04 Dec 2017 00:00:00 +0000</lastBuildDate><atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using Snippets in RStudio as Keyboard Shortcuts</title>
       <link>/2017/12/04/using-snippets-in-rstudio-as-keyboard-shortcuts/</link>
@@ -19,7 +15,7 @@
       <guid>/2017/12/04/using-snippets-in-rstudio-as-keyboard-shortcuts/</guid>
       <description>Code Snippets are a useful feature of RStudio that many people don’t know about. The RStudio Blog post gives good instructions on how they can be used, but I thought I’d share how I use them.
 Here are some of the ways I use snippets:
-Loading MagrittrOne of my favorite R functions is the pipe operator, %&amp;gt;%, from the Magrittr package. There’s already a keyboard shortcut, Ctrl+Shift+M, for this function.</description>
+Loading Magrittr One of my favorite R functions is the pipe operator, %&amp;gt;%, from the Magrittr package. There’s already a keyboard shortcut, Ctrl+Shift+M, for this function.</description>
     </item>
     
     <item>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.79.1" />
+
+
+<title>What is t-SNE? - Collin Erickson</title>
+<meta property="og:title" content="What is t-SNE? - Collin Erickson">
+
+
+
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" href="../../../../css/fonts.css" media="all">
+<link rel="stylesheet" href="../../../../css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="../../../../" class="nav-logo">
+    <img src="../../../../images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="../../../../about/">About</a></li>
+    
+    <li><a href="https://github.com/CollinErickson">GitHub</a></li>
+    
+    <li><a href="https://twitter.com/collin_e">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">2 min read</span>
+    
+
+    <h1 class="article-title">What is t-SNE?</h1>
+
+    
+    <span class="article-date">2019/07/14</span>
+    
+
+    <div class="article-content">
+      
+<script src="../../../../rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>I’ve heard about t-SNE recently in a few places,
+but I have no clue how it works.
+I’m going to give it a shot here and see if I can understand it.</p>
+<p>t-SNE is a dimensionality reduction technique that is often used to
+visualize data from many dimensions in two or three dimensions.
+Unlike PCA, t-SNE is a nonlinear technique for dimensionality
+reduction.
+The method uses similarity distributions in the full input space
+and in the reduced dimension space.
+It minimizes the difference between these two distributions
+to create the best mapping into the lower dimensional subspace.</p>
+<p>The mapping in low dimension space has parameters that are
+estimated using stochastic gradient descent.
+This can take a long time to run,
+and will be much slower than PCA.</p>
+<p>The similarity of point <span class="math inline">\(x_j\)</span> to <span class="math inline">\(x_i\)</span> in the full dimensions
+is given by
+<span class="math display">\[p_{j|i} = \frac{\exp(-||x_i-x_j||^2/(2\sigma^2))}{\sum_{k\neq i} \exp(-||x_i-x_k||^2/(2\sigma^2))} \]</span></p>
+<p>The low dimensional points corresponding to <span class="math inline">\(x_i\)</span> and <span class="math inline">\(x_j\)</span>
+are <span class="math inline">\(y_i\)</span> and <span class="math inline">\(y_j\)</span>.
+The similarity distance between these is given by
+<span class="math display">\[q_{j|i} = \frac{\exp(-||y_i-y_j||^2)}{\sum_{k\neq i} \exp(-||y_i-y_k||^2)} \]</span>
+The <span class="math inline">\(\sigma\)</span>’s have been removed because we can control the scaling
+in that space.
+If the mapping were perfect, we would have <span class="math inline">\(p_{j|i} = q_{j|i}\)</span>.
+Thus we will try to create the best mapping by minimizing the distance
+between these two.
+As is common with probability distributions, our distance measure is the
+Kullback-Leibler measure, although it is not a valid distance metric.</p>
+<div id="pros-and-cons" class="section level2">
+<h2>Pros and Cons</h2>
+<p>Pros:
+- Better results than PCA</p>
+<p>Cons:
+- Much slower than PCA</p>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="../../../../index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="../../../../images/hugo-logo.png" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+    
+<script src="../../../../js/math-code.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  }
+});
+</script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
+

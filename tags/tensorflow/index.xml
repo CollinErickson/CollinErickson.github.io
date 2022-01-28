@@ -1,24 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tensorflow on Collin Erickson</title>
+    <title>TensorFlow on Collin Erickson</title>
     <link>/tags/tensorflow/</link>
-    <description>Recent content in Tensorflow on Collin Erickson</description>
+    <description>Recent content in TensorFlow on Collin Erickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Aug 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/tensorflow/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 22 Aug 2018 00:00:00 +0000</lastBuildDate><atom:link href="/tags/tensorflow/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Creating an autoencoder with TensorFlow in R</title>
       <link>/2018/08/22/creating-an-autoencoder-with-tensorflow-in-r/</link>
       <pubDate>Wed, 22 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/08/22/creating-an-autoencoder-with-tensorflow-in-r/</guid>
-      <description>Once again I’m going to be trying something new,and mainly just using this blog post to track itfor later reference.This time I am going to implement an autoencoder,and I’m going to use the R interface to TensorFlowto do it.
-DataI’m not going to use real data.I’m just going to creating a function that will give a sequenceof numbers.These will be fed into the network, with the goal beingto get the same thing out on the other side.</description>
+      <description>Once again I’m going to be trying something new, and mainly just using this blog post to track it for later reference. This time I am going to implement an autoencoder, and I’m going to use the R interface to TensorFlow to do it.
+Data I’m not going to use real data. I’m just going to creating a function that will give a sequence of numbers. These will be fed into the network, with the goal being to get the same thing out on the other side.</description>
     </item>
     
     <item>
@@ -27,8 +23,8 @@ DataI’m not going to use real data.I’m just going to creating a function t
       <pubDate>Sat, 04 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/08/04/how-to-load-a-pretrained-model-in-tensorflow/</guid>
-      <description>At work I struggled for days to load a pretrained model intoTensorFlow before giving up.Then a few weeks later I tried again and it worked fine.I’m going to try to do it again here to make sureI can get it to work.
-Why you would use a pretrained modelPretrained models are especially useful for image classification.The convolutional neural networks (CNNs) used for image classificationoften have eight or more layers and over a million parameters.</description>
+      <description>At work I struggled for days to load a pretrained model into TensorFlow before giving up. Then a few weeks later I tried again and it worked fine. I’m going to try to do it again here to make sure I can get it to work.
+Why you would use a pretrained model Pretrained models are especially useful for image classification. The convolutional neural networks (CNNs) used for image classification often have eight or more layers and over a million parameters.</description>
     </item>
     
     <item>
@@ -50,7 +46,7 @@ One way we can do this is to encode an equation that we want to use near the end
       <guid>/2017/08/01/getting-started-with-tensorflow-in-r/</guid>
       <description>I have installed TensorFlow on my Windows laptop, and it appears to work using Python. I’m a heavy R user, so I’d like to be able to run TensorFlow through R (and RStudio).
 First I installed the tensorflow library
-install.packages(&amp;#39;tensorflow&amp;#39;)library(tensorflow)This warned me that my version of R wasn’t up to date. I updated R to 3.4.1 and RStudio to 1.0.153 to make sure that everything is the current version.</description>
+install.packages(&amp;#39;tensorflow&amp;#39;) library(tensorflow) This warned me that my version of R wasn’t up to date. I updated R to 3.4.1 and RStudio to 1.0.153 to make sure that everything is the current version.</description>
     </item>
     
     <item>

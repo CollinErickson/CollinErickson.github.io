@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.20.7" />
+<meta name="generator" content="Hugo 0.79.1" />
 
 
 <title>Using crossprod in R - Collin Erickson</title>
@@ -69,7 +69,10 @@
     
 
     <div class="article-content">
-      <p>Often I have come across the function <code>crossprod</code> in R, and found that it didn’t have much effect. Here I will explore if it is useful and when.</p>
+      
+
+
+<p>Often I have come across the function <code>crossprod</code> in R, and found that it didn’t have much effect. Here I will explore if it is useful and when.</p>
 <p>The function <code>crossprod(x,y)</code> is equivalent to <code>t(x) %*% y</code>, i.e., allows you to multiply two matrices or vectors, where the transpose of the first argument is used. There is also the function <code>tcrossprod</code> to transpose the second argument. The function allows you to avoid the operation of finding the transpose, and thus should be faster. I would expect the difference to depend on how big the matrix is that needs transposing and perhaps on whether it is a skinny or wide matrix.</p>
 <p>Disclaimer: this time speedup is tiny and should only be used if your code is slow and you have identified the bottleneck. 99% of R users don’t need to worry about minor time speedups and can ignore this.</p>
 <div id="small-test" class="section level3">

@@ -1,5 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2022-01-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2022/01/26/i-forgot-how-this-works/</loc>
+    <lastmod>2022-01-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2022-01-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2019/07/14/what-is-t-sne/</loc>
+    <lastmod>2019-07-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/baseball/</loc>
+    <lastmod>2019-06-04T00:00:00+00:00</lastmod>
+  </url>
   
   <url>
     <loc>/2019/06/04/calculating-park-factors/</loc>
@@ -7,7 +33,22 @@
   </url>
   
   <url>
+    <loc>/tags/r/</loc>
+    <lastmod>2019-06-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2019-06-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2019/06/02/getting-started-with-rstan/</loc>
+    <lastmod>2019-06-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/rstan/</loc>
     <lastmod>2019-06-02T00:00:00+00:00</lastmod>
   </url>
   
@@ -19,6 +60,11 @@
   <url>
     <loc>/2019/06/01/using-launch-angle-data/</loc>
     <lastmod>2019-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/mlbgameday/</loc>
+    <lastmod>2019-05-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -67,6 +113,16 @@
   </url>
   
   <url>
+    <loc>/tags/clustering/</loc>
+    <lastmod>2018-10-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/data-science/</loc>
+    <lastmod>2018-10-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2018/10/26/what-is-spectral-clustering/</loc>
     <lastmod>2018-10-26T00:00:00+00:00</lastmod>
   </url>
@@ -77,13 +133,33 @@
   </url>
   
   <url>
+    <loc>/tags/autoencoder/</loc>
+    <lastmod>2018-08-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2018/08/22/creating-an-autoencoder-with-tensorflow-in-r/</loc>
+    <lastmod>2018-08-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/tensorflow/</loc>
     <lastmod>2018-08-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/2018/08/04/how-to-load-a-pretrained-model-in-tensorflow/</loc>
     <lastmod>2018-08-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/python/</loc>
+    <lastmod>2018-06-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/rstudio/</loc>
+    <lastmod>2018-06-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -102,6 +178,11 @@
   </url>
   
   <url>
+    <loc>/tags/r6/</loc>
+    <lastmod>2018-01-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2018/01/10/using-active-bindings-in-r6-classes/</loc>
     <lastmod>2018-01-10T00:00:00+00:00</lastmod>
   </url>
@@ -109,6 +190,16 @@
   <url>
     <loc>/2017/12/11/how-i-create-a-new-post-using-hugo-rstudio-and-git/</loc>
     <lastmod>2017-12-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2017-12-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/r/</loc>
+    <lastmod>2017-12-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -123,6 +214,11 @@
   
   <url>
     <loc>/2017/08/05/getting-rcpp-to-work-with-my-r-package/</loc>
+    <lastmod>2017-08-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/rcpp/</loc>
     <lastmod>2017-08-05T00:00:00+00:00</lastmod>
   </url>
   
@@ -154,107 +250,6 @@
   <url>
     <loc>/about/</loc>
     <lastmod>2016-05-05T21:48:51-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/autoencoder/</loc>
-    <lastmod>2018-08-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/baseball/</loc>
-    <lastmod>2019-06-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/clustering/</loc>
-    <lastmod>2018-10-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2019-06-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/data-science/</loc>
-    <lastmod>2018-10-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/mlbgameday/</loc>
-    <lastmod>2019-05-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2019-06-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/python/</loc>
-    <lastmod>2018-06-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/r/</loc>
-    <lastmod>2019-06-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/r/</loc>
-    <lastmod>2017-12-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/r6/</loc>
-    <lastmod>2018-01-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/rcpp/</loc>
-    <lastmod>2017-08-05T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/rstan/</loc>
-    <lastmod>2019-06-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/rstudio/</loc>
-    <lastmod>2018-06-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2018-08-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/tensorflow/</loc>
-    <lastmod>2018-08-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>

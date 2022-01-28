@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.20.7" />
+<meta name="generator" content="Hugo 0.79.1" />
 
 
 <title>Getting started with TensorFlow on Windows - Collin Erickson</title>
@@ -69,7 +69,10 @@
     
 
     <div class="article-content">
-      <p>I have wanted to try using TensorFlow for a while since it is very popular, and I think it might be able to solve a problem I’m working on this summer. I have a Windows 7 laptop, so I’ll be detailing the installation process for TensorFlow on a Windows computer.</p>
+      
+
+
+<p>I have wanted to try using TensorFlow for a while since it is very popular, and I think it might be able to solve a problem I’m working on this summer. I have a Windows 7 laptop, so I’ll be detailing the installation process for TensorFlow on a Windows computer.</p>
 <p>This is mostly for my own reference purposes, you will learn nothing by reading this. I’m just following the details provided by TensorFlow here <a href="https://www.tensorflow.org/install/install_windows" class="uri">https://www.tensorflow.org/install/install_windows</a>.</p>
 <p>I have Anaconda installed with Python 2.7. TensorFlow needs Python 3.5, so I opened an Anaconda Prompt and entered <code>conda create -n tensorflow python=3.5</code>. This created a new environment with Python 3.5. To switch to this environment, I entered <code>activate tensorflow</code>. Then I installed the CPU-only version of TF using the command</p>
 <pre><code>(tensorflow)C:&gt; pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/windows/cpu/tensorflow-1.2.1-cp35-cp35m-win_amd64.whl</code></pre>

@@ -1,23 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Baseball on Collin Erickson</title>
+    <title>baseball on Collin Erickson</title>
     <link>/tags/baseball/</link>
-    <description>Recent content in Baseball on Collin Erickson</description>
+    <description>Recent content in baseball on Collin Erickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Jun 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/baseball/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 04 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="/tags/baseball/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Calculating park factors</title>
       <link>/2019/06/04/calculating-park-factors/</link>
       <pubDate>Tue, 04 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/06/04/calculating-park-factors/</guid>
-      <description>I’ve been thinking a bit about park factors recently.A lot of stats are pretty meaningless without context.40 home runs for a Rockies player is not as good as 40home runs for a Dodgers player because Coors is much morehitter-friendly.Park factors are used to determine how many runs are scored atany given stadium compared to the rest of the league.+/- stats like OPS+ and ERA- adjust for the stadium,making comparisons for players across teams more fair.</description>
+      <description>I’ve been thinking a bit about park factors recently. A lot of stats are pretty meaningless without context. 40 home runs for a Rockies player is not as good as 40 home runs for a Dodgers player because Coors is much more hitter-friendly. Park factors are used to determine how many runs are scored at any given stadium compared to the rest of the league. +/- stats like OPS+ and ERA- adjust for the stadium, making comparisons for players across teams more fair.</description>
     </item>
     
     <item>
@@ -26,9 +22,9 @@
       <pubDate>Sat, 01 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/06/01/on-what-counts-do-batters-swing/</guid>
-      <description>Recently I’ve heard some things about when batters should swing.Many hitters take the first pitch of an at bat to get a feel for the pitcher.All hitters should take on 3-0.
+      <description>Recently I’ve heard some things about when batters should swing. Many hitters take the first pitch of an at bat to get a feel for the pitcher. All hitters should take on 3-0.
 I want to look at the rate at which batters swing based on the count.
-library(magrittr)library(ggplot2)## Registered S3 methods overwritten by &amp;#39;ggplot2&amp;#39;:## method from ## [.quosures rlang## c.quosures rlang## print.quosures rlanglibrary(dplyr)## ## Attaching package: &amp;#39;dplyr&amp;#39;## The following objects are masked from &amp;#39;package:stats&amp;#39;:## ## filter, lag## The following objects are masked from &amp;#39;package:base&amp;#39;:## ## intersect, setdiff, setequal, unionLoad the data as d</description>
+library(magrittr) library(ggplot2) ## Registered S3 methods overwritten by &amp;#39;ggplot2&amp;#39;: ## method from ## [.quosures rlang ## c.quosures rlang ## print.quosures rlang library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union Load the data as d</description>
     </item>
     
     <item>
@@ -37,8 +33,8 @@ library(magrittr)library(ggplot2)## Registered S3 methods overwritten by &amp;
       <pubDate>Sat, 01 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/06/01/using-launch-angle-data/</guid>
-      <description>I’m going to look at some launch angle datausing the data scraped from Baseball Savant.
-library(magrittr)library(ggplot2)## Registered S3 methods overwritten by &amp;#39;ggplot2&amp;#39;:## method from ## [.quosures rlang## c.quosures rlang## print.quosures rlanglibrary(dplyr)## ## Attaching package: &amp;#39;dplyr&amp;#39;## The following objects are masked from &amp;#39;package:stats&amp;#39;:## ## filter, lag## The following objects are masked from &amp;#39;package:base&amp;#39;:## ## intersect, setdiff, setequal, unionLoad the data as d</description>
+      <description>I’m going to look at some launch angle data using the data scraped from Baseball Savant.
+library(magrittr) library(ggplot2) ## Registered S3 methods overwritten by &amp;#39;ggplot2&amp;#39;: ## method from ## [.quosures rlang ## c.quosures rlang ## print.quosures rlang library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union Load the data as d</description>
     </item>
     
     <item>
@@ -47,8 +43,8 @@ library(magrittr)library(ggplot2)## Registered S3 methods overwritten by &amp;
       <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/05/14/nasty-pitches/</guid>
-      <description>library(mlbgameday)library(magrittr)library(ggplot2)library(dplyr)## ## Attaching package: &amp;#39;dplyr&amp;#39;## The following objects are masked from &amp;#39;package:stats&amp;#39;:## ## filter, lag## The following objects are masked from &amp;#39;package:base&amp;#39;:## ## intersect, setdiff, setequal, unionPitches from PITCHf/x have a feature called nastythat somehow estimates the nastiness of a pitch.https://tht.fangraphs.com/tht-live/gameday-pitchf-x-changes-for-2010/gives a short description of it.
-The “nasty” field is presumably a crude attempt to calculate how hard to hit a particular pitch was, on a scale of 0-100.</description>
+      <description>library(mlbgameday) library(magrittr) library(ggplot2) library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union Pitches from PITCHf/x have a feature called nasty that somehow estimates the nastiness of a pitch. https://tht.fangraphs.com/tht-live/gameday-pitchf-x-changes-for-2010/ gives a short description of it.
+ The “nasty” field is presumably a crude attempt to calculate how hard to hit a particular pitch was, on a scale of 0-100.</description>
     </item>
     
     <item>
@@ -57,8 +53,8 @@ library(magrittr)library(ggplot2)## Registered S3 methods overwritten by &amp;
       <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/05/13/getting-better-mlb-data-from-baseballsavant-in-r/</guid>
-      <description>The MLB data I got using the R package mlbgamedayis kind of disappointing.It doesn’t have things like exit velocity,and I saw last time that it’s very hard to calculateexpected runs.Google recommended the following article:https://billpetti.github.io/2018-02-19-build-statcast-database-rstats/
-I looked at it and it seems like it would allow me to get better datathan mlbgameday.It has launch_angle, launch_speed, estimated wOBA, etc.So here I’m going to try to follow the instructions in the postto get a better data set.</description>
+      <description>The MLB data I got using the R package mlbgameday is kind of disappointing. It doesn’t have things like exit velocity, and I saw last time that it’s very hard to calculate expected runs. Google recommended the following article: https://billpetti.github.io/2018-02-19-build-statcast-database-rstats/
+I looked at it and it seems like it would allow me to get better data than mlbgameday. It has launch_angle, launch_speed, estimated wOBA, etc. So here I’m going to try to follow the instructions in the post to get a better data set.</description>
     </item>
     
     <item>
@@ -67,7 +63,7 @@ I looked at it and it seems like it would allow me to get better datathan mlbga
       <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/05/11/expected-runs-for-every-game-state/</guid>
-      <description>A state in a baseball game is defined by the number outs and which bases have baserunners.We could include the count, inning, etc, but we’re starting with the simplest version.For a given state, there is an expected number of runs a team would score inthe remainder of that inning.These tables are readily available online.I want to try to recreate the tables using data from mlbgameday package.</description>
+      <description>A state in a baseball game is defined by the number outs and which bases have baserunners. We could include the count, inning, etc, but we’re starting with the simplest version. For a given state, there is an expected number of runs a team would score in the remainder of that inning. These tables are readily available online. I want to try to recreate the tables using data from mlbgameday package.</description>
     </item>
     
     <item>
@@ -76,9 +72,9 @@ I looked at it and it seems like it would allow me to get better datathan mlbga
       <pubDate>Thu, 09 May 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/05/09/babip-part-2/</guid>
-      <description>Last time I looked into BABIP to see if pitchers could control it.I want to check a couple of more things.
+      <description>Last time I looked into BABIP to see if pitchers could control it. I want to check a couple of more things.
 I’m getting the same data as last time.
-library(mlbgameday)library(magrittr)library(ggplot2)library(dplyr)## ## Attaching package: &amp;#39;dplyr&amp;#39;## The following objects are masked from &amp;#39;package:stats&amp;#39;:## ## filter, lag## The following objects are masked from &amp;#39;package:base&amp;#39;:## ## intersect, setdiff, setequal, union# Takes hours to get all the data for the yeardat &amp;lt;- get_payload(start = &amp;quot;2018-01-01&amp;quot;, end = &amp;quot;2018-12-31&amp;quot;)Get pitcher names from at bat data.</description>
+library(mlbgameday) library(magrittr) library(ggplot2) library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union # Takes hours to get all the data for the year dat &amp;lt;- get_payload(start = &amp;quot;2018-01-01&amp;quot;, end = &amp;quot;2018-12-31&amp;quot;) Get pitcher names from at bat data.</description>
     </item>
     
     <item>
@@ -87,9 +83,9 @@ library(mlbgameday)library(magrittr)library(ggplot2)library(dplyr)## ## Atta
       <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/05/07/babip/</guid>
-      <description>Recently I was reading about pitchers having no control over results of a ball in play.This is the main idea behind FIP/DIPS.This goes against the common idea that pitchers can be good if they induce weak contact.I’m going to investigate this in this post.
+      <description>Recently I was reading about pitchers having no control over results of a ball in play. This is the main idea behind FIP/DIPS. This goes against the common idea that pitchers can be good if they induce weak contact. I’m going to investigate this in this post.
 Similar to last time, I’m using the same data from mlbgameday.
-library(mlbgameday)library(magrittr)library(ggplot2)library(dplyr)## ## Attaching package: &amp;#39;dplyr&amp;#39;## The following objects are masked from &amp;#39;package:stats&amp;#39;:## ## filter, lag## The following objects are masked from &amp;#39;package:base&amp;#39;:## ## intersect, setdiff, setequal, unionGet data.</description>
+library(mlbgameday) library(magrittr) library(ggplot2) library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union Get data.</description>
     </item>
     
     <item>
@@ -99,8 +95,8 @@ library(mlbgameday)library(magrittr)library(ggplot2)library(dplyr)## ## Atta
       
       <guid>/2019/05/06/swings-and-misses/</guid>
       <description>I going to work more with data from mlbgameday.
-library(mlbgameday)library(magrittr)library(ggplot2)library(dplyr)## ## Attaching package: &amp;#39;dplyr&amp;#39;## The following objects are masked from &amp;#39;package:stats&amp;#39;:## ## filter, lag## The following objects are masked from &amp;#39;package:base&amp;#39;:## ## intersect, setdiff, setequal, unionGet data.
-# Takes hours to get all the data for the yeardat &amp;lt;- get_payload(start = &amp;quot;2018-01-01&amp;quot;, end = &amp;quot;2018-12-31&amp;quot;)Get pitcher names from at bat data.</description>
+library(mlbgameday) library(magrittr) library(ggplot2) library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union Get data.
+# Takes hours to get all the data for the year dat &amp;lt;- get_payload(start = &amp;quot;2018-01-01&amp;quot;, end = &amp;quot;2018-12-31&amp;quot;) Get pitcher names from at bat data.</description>
     </item>
     
     <item>
@@ -110,8 +106,8 @@ library(mlbgameday)library(magrittr)library(ggplot2)library(dplyr)## ## Atta
       
       <guid>/2019/04/29/using-mlbgameday-to-see-what-pitches-get-hit/</guid>
       <description>Load packages
-library(mlbgameday)library(dplyr)## ## Attaching package: &amp;#39;dplyr&amp;#39;## The following objects are masked from &amp;#39;package:stats&amp;#39;:## ## filter, lag## The following objects are masked from &amp;#39;package:base&amp;#39;:## ## intersect, setdiff, setequal, unionlibrary(ggplot2)library(magrittr)Get data. Using arbitrary dates.
-dat &amp;lt;- get_payload(start = &amp;quot;2018-08-01&amp;quot;, end = &amp;quot;2018-08-31&amp;quot;)## Gathering Gameday data, please be patient...## Warning: executing %dopar% sequentially: no parallel backend registeredThis siteis useful for deciphering fields.</description>
+library(mlbgameday) library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) library(magrittr) Get data. Using arbitrary dates.
+dat &amp;lt;- get_payload(start = &amp;quot;2018-08-01&amp;quot;, end = &amp;quot;2018-08-31&amp;quot;) ## Gathering Gameday data, please be patient... ## Warning: executing %dopar% sequentially: no parallel backend registered This site is useful for deciphering fields.</description>
     </item>
     
     <item>
@@ -122,8 +118,8 @@ dat &amp;lt;- get_payload(start = &amp;quot;2018-08-01&amp;quot;, end = &amp;quo
       <guid>/2019/03/19/looking-at-pitches-with-the-r-package-mlbgameday/</guid>
       <description>I’ll be continuing on from the last post.
 Load packages first.
-library(mlbgameday)library(dplyr)## ## Attaching package: &amp;#39;dplyr&amp;#39;## The following objects are masked from &amp;#39;package:stats&amp;#39;:## ## filter, lag## The following objects are masked from &amp;#39;package:base&amp;#39;:## ## intersect, setdiff, setequal, unionlibrary(ggplot2)library(magrittr)Get some data.
-dat &amp;lt;- get_payload(start = &amp;quot;2018-08-22&amp;quot;, end = &amp;quot;2018-08-22&amp;quot;)## Gathering Gameday data, please be patient...## Warning: executing %dopar% sequentially: no parallel backend registeredWe’re going to be looking at dat$pitch.</description>
+library(mlbgameday) library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) library(magrittr) Get some data.
+dat &amp;lt;- get_payload(start = &amp;quot;2018-08-22&amp;quot;, end = &amp;quot;2018-08-22&amp;quot;) ## Gathering Gameday data, please be patient... ## Warning: executing %dopar% sequentially: no parallel backend registered We’re going to be looking at dat$pitch.</description>
     </item>
     
     <item>
@@ -132,9 +128,9 @@ dat &amp;lt;- get_payload(start = &amp;quot;2018-08-22&amp;quot;, end = &amp;quo
       <pubDate>Mon, 18 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/03/18/getting-started-with-r-package-mlbgameday/</guid>
-      <description>I’m going to start digging into baseball statistics.There are a couple of R packages that facilitate the collecting of datafrom MLB.I’ll be using the R package mlbgameday, mostly because I saw that it wasrecently updated.
-Getting some dataFirst we load the package.Along with a couple of other of packages that we’ll need.
-library(mlbgameday)library(dplyr)## ## Attaching package: &amp;#39;dplyr&amp;#39;## The following objects are masked from &amp;#39;package:stats&amp;#39;:## ## filter, lag## The following objects are masked from &amp;#39;package:base&amp;#39;:## ## intersect, setdiff, setequal, unionlibrary(ggplot2)library(magrittr)Now we’ll grab some data.</description>
+      <description>I’m going to start digging into baseball statistics. There are a couple of R packages that facilitate the collecting of data from MLB. I’ll be using the R package mlbgameday, mostly because I saw that it was recently updated.
+Getting some data First we load the package. Along with a couple of other of packages that we’ll need.
+library(mlbgameday) library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union library(ggplot2) library(magrittr) Now we’ll grab some data.</description>
     </item>
     
   </channel>

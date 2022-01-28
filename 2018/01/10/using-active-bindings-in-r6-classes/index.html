@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.20.7" />
+<meta name="generator" content="Hugo 0.79.1" />
 
 
 <title>Using active bindings in R6 classes - Collin Erickson</title>
@@ -69,7 +69,10 @@
     
 
     <div class="article-content">
-      <p>I’ve used <a href="https://cran.r-project.org/web/packages/R6/vignettes/Introduction.html">R6</a> classes in a lot of my R projects in recent years. They are easier to understand than S3 and S4 objects if you’ve ever done programming with objects in other languages. I also am still not sure how I can have functions act on data in an S3 object. I think it’s not possible, but I’m really not sure. And R6 classes are definitely better than RC objects.</p>
+      
+
+
+<p>I’ve used <a href="https://cran.r-project.org/web/packages/R6/vignettes/Introduction.html">R6</a> classes in a lot of my R projects in recent years. They are easier to understand than S3 and S4 objects if you’ve ever done programming with objects in other languages. I also am still not sure how I can have functions act on data in an S3 object. I think it’s not possible, but I’m really not sure. And R6 classes are definitely better than RC objects.</p>
 <p>Active bindings allow R6 fields to act like functions (or to have functions look like fields). My main reason for writing this is to see how slow accessing active binding fields of R6 classes is.</p>
 <div id="what-is-an-r6-class" class="section level2">
 <h2>What is an R6 class?</h2>

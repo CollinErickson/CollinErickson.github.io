@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.20.7" />
+<meta name="generator" content="Hugo 0.79.1" />
 
 
 <title>Creating a gray box neural network in TensorFlow - Collin Erickson</title>
@@ -69,7 +69,10 @@
     
 
     <div class="article-content">
-      <p>Generally neural networks act as black boxes. The input goes in, you get output, and there is interpretation of the data that helps you understand the model.</p>
+      
+
+
+<p>Generally neural networks act as black boxes. The input goes in, you get output, and there is interpretation of the data that helps you understand the model.</p>
 <p>A gray box means that we impose structure on the internal structure of the neural network, so that after the model is fit we can look at the estimated parameters and they will tell us something useful.</p>
 <p>One way we can do this is to encode an equation that we want to use near the end of the neural network.</p>
 <p>For example, if I know that <span class="math inline">\(y=a e^{cx} + b\)</span>, I can have <span class="math inline">\(c\)</span> be a variable, multiply <span class="math inline">\(x\)</span> by it, use the exponential as the activation function, then do a linear layer to the output.</p>

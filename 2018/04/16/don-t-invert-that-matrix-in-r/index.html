@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.20.7" />
+<meta name="generator" content="Hugo 0.79.1" />
 
 
 <title>Don&#39;t invert that matrix in R - Collin Erickson</title>
@@ -69,7 +69,10 @@
     
 
     <div class="article-content">
-      <p>There’s a somewhat famous blog post titled <a href="https://www.johndcook.com/blog/2010/01/19/dont-invert-that-matrix/">Don’t Invert That Matrix</a>. This topic has also been discussed using R <a href="http://civilstat.com/2015/07/dont-invert-that-matrix-why-and-how/">on this blog post</a>. You should read those instead of this. I’m just experimenting to see how important this concept is in R, especially in the cases I use often.</p>
+      
+
+
+<p>There’s a somewhat famous blog post titled <a href="https://www.johndcook.com/blog/2010/01/19/dont-invert-that-matrix/">Don’t Invert That Matrix</a>. This topic has also been discussed using R <a href="http://civilstat.com/2015/07/dont-invert-that-matrix-why-and-how/">on this blog post</a>. You should read those instead of this. I’m just experimenting to see how important this concept is in R, especially in the cases I use often.</p>
 <div id="the-main-idea" class="section level2">
 <h2>The main idea</h2>
 <p>Often finding the inverse of a matrix is not the endgoal. If it is, then you have do invert it. Otherwise you are usually trying to solve a system of equations, <span class="math inline">\(Ax=b\)</span>, for the vector <span class="math inline">\(x\)</span>, where <span class="math inline">\(A\)</span> is a matrix and <span class="math inline">\(b\)</span> is a given vector. You may need to solve this for many different <span class="math inline">\(b\)</span> or for a single one. If you only need to solve it for a single <span class="math inline">\(b\)</span>, you can simply run <code>solve(A, b)</code> and you are done.</p>
